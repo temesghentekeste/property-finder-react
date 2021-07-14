@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
 
+import WaveLoading from 'react-loadingg/lib/WaveLoading';
+import { Redirect } from 'react-router-dom';
 import { getUserTokenInfo } from '../../redux/loginSlice';
 import LoginForm from '../../components/LoginForm';
 
@@ -24,6 +26,10 @@ const Login = () => {
   return (
     <div>
       <h1>Login</h1>
+      {error && <h3>{error}</h3>}
+
+      {loading && <WaveLoading />}
+      {user && user.username && user.token && <Redirect to="/" />}
       <LoginForm handleSubmit={handleSubmit} />
     </div>
   );
