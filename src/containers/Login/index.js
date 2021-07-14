@@ -1,12 +1,21 @@
-import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getUserTokenInfo } from '../../redux/loginSlice';
 import LoginForm from '../../components/LoginForm';
 
-const Logi = () => {
-  console.log('Login');
+const Login = () => {
+  const dispatch = useDispatch();
+  const { login } = useSelector((state) => state.usernametoken);
+
+  console.log('login ...');
   const handleSubmit = (e, user) => {
-    e.preventDefault();
     console.log(user);
+    e.preventDefault();
+    dispatch(getUserTokenInfo(user));
   };
+
+  console.log(login);
+
   return (
     <div>
       <h1>Login</h1>
@@ -15,4 +24,4 @@ const Logi = () => {
   );
 };
 
-export default Logi;
+export default Login;

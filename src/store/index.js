@@ -7,6 +7,6 @@ export default configureStore({
   reducer: {
     properties: propertiesReducer,
     property: propertyReducer,
-    login: loginReducer,
+    usernametoken: loginReducer,
   },
 });

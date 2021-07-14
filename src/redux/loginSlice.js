@@ -15,12 +15,10 @@ const initialState = {
 
 export const getUserTokenInfo = createAsyncThunk(
   'properties/getUserTokenInfo',
-  async (username, password) => {
+  async (user) => {
+    console.log('Reached', user);
     const data = {
-      user: {
-        username,
-        password,
-      },
+      user,
     };
     const headers = {
       'Content-Type': 'application/json',
@@ -29,19 +27,20 @@ export const getUserTokenInfo = createAsyncThunk(
       headers,
     });
     const userInfo = await response.data;
+    console.log(userInfo, data);
     return userInfo;
   },
 );
 
 const loginSlice = createSlice({
-  name: 'token',
+  name: 'usernametoken',
   initialState,
   extraReducers: {
     [getUserTokenInfo.pending]: (state, action) => {
       state.loading = true;
       state.login = false;
       state.user = {};
-      state.token = localStorage.getItem('PropertyFinderToken');
+      state.token = '' || localStorage.getItem('PropertyFinderToken');
       state.username = '' || localStorage.getItem('PropertyFinderUsername');
       state.error = '';
     },
@@ -55,6 +54,14 @@ const loginSlice = createSlice({
       state.token = localStorage.getItem('PropertyFinderToken');
       state.username = '' || localStorage.getItem('PropertyFinderUsername');
       state.error = '';
+    },
+    [getUserTokenInfo.rejected]: (state, action) => {
+      state.loading = false;
+      state.login = false;
+      state.user = {};
+      state.token = localStorage.getItem('PropertyFinderToken');
+      state.username = '' || localStorage.getItem('PropertyFinderUsername');
+      state.error = 'Incorrect username or password.';
     },
   },
 });

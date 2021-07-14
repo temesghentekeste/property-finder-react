@@ -12,7 +12,7 @@ const LoginForm = ({ handleSubmit }) => {
 
   useEffect(() => {
     userNameRef.current.focus();
-  });
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
