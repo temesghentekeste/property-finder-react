@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import Properties from '../../containers/properties';
+import Properties from '../../containers/Properties';
 import styles from './App.module.css';
 
 function App() {
