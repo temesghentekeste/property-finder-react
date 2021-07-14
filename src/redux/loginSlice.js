@@ -33,7 +33,7 @@ export const getUserTokenInfo = createAsyncThunk(
 );
 
 const loginSlice = createSlice({
-  name: 'usernametoken',
+  name: 'usernametoken2',
   initialState,
   extraReducers: {
     [getUserTokenInfo.pending]: (state, action) => {
@@ -51,9 +51,11 @@ const loginSlice = createSlice({
         username: action.payload.username,
         token: action.payload.token,
       };
-      state.token = localStorage.getItem('PropertyFinderToken');
-      state.username = '' || localStorage.getItem('PropertyFinderUsername');
+      state.token = action.payload.token;
+      state.username = action.payload.username;
       state.error = '';
+      localStorage.setItem('PropertyFinderToken', action.payload.token);
+      localStorage.setItem('PropertyFinderUsername', action.payload.username);
     },
     [getUserTokenInfo.rejected]: (state, action) => {
       state.loading = false;

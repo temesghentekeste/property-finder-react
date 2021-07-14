@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getUserTokenInfo } from '../../redux/loginSlice';
@@ -5,7 +6,9 @@ import LoginForm from '../../components/LoginForm';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { login } = useSelector((state) => state.usernametoken);
+  const {
+    login, loading, error, token, username,
+  } = useSelector((state) => state.usernametoken);
 
   console.log('login ...');
   const handleSubmit = (e, user) => {
@@ -13,8 +16,6 @@ const Login = () => {
     e.preventDefault();
     dispatch(getUserTokenInfo(user));
   };
-
-  console.log(login);
 
   return (
     <div>
