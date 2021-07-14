@@ -6,25 +6,26 @@ import { WaveLoading } from 'react-loadingg';
 import Properties from '../../containers/properties';
 import styles from './App.module.css';
 
-import {
-  getPropertiesAsync,
-} from '../../redux/propertiesSlice';
+import { getPropertiesAsync } from '../../redux/propertiesSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const { loading, properties } = useSelector(
-    (state) => state.properties,
-  );
+  const { loading, properties } = useSelector((state) => state.properties);
 
   useEffect(() => {
     dispatch(getPropertiesAsync());
   }, [dispatch]);
 
   console.log(properties);
+
+  if (loading || loading === null || loading === undefined) {
+    return <WaveLoading />;
+  }
+
   return (
     <div className={styles.App}>
       <h1>Property Finder</h1>
-      <Properties />
+      <Properties properties={properties} />
     </div>
   );
 }
