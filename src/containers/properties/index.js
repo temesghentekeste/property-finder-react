@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { WaveLoading } from 'react-loadingg';
 import { getPropertiesAsync } from '../../redux/propertiesSlice';
-import Property from './Property';
+import PropertyItem from './PropertyItem';
 
 const Properties = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,11 @@ const Properties = () => {
       <h2>All Properties</h2>
       {properties.data.length > 0
         && properties.data.map((property) => (
-          <Property key={property.id} attributes={property.attributes} />
+          <PropertyItem
+            key={property.id}
+            id={property.id}
+            attributes={property.attributes}
+          />
         ))}
     </div>
   );
