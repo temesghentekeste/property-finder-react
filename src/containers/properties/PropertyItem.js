@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const PropertyItem = ({
+  id,
   attributes: {
-    id,
     name,
     address,
     description,
@@ -29,6 +29,7 @@ const PropertyItem = ({
 
 PropertyItem.propTypes = {
   attributes: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default PropertyItem;
