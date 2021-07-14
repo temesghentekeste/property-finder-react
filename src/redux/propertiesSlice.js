@@ -7,7 +7,7 @@ import { allPropertiesURL } from '../api/apiEndPoints';
 const initialState = {
   loading: false,
   properties: [],
-  filter: '',
+  error: '',
 };
 
 export const getPropertiesAsync = createAsyncThunk(
