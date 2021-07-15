@@ -12,10 +12,10 @@ const initialState = {
 
 export const getFavoritesAsync = createAsyncThunk(
   'favorites/getFavoritesAsync',
-  async (username) => {
+  async () => {
     await axiosDefaults();
     await axiosHeders();
-    const response = await axios.get(`/favorires/${username}`);
+    const response = await axios.get('/favorites');
     const favorites = await response.data;
     return favorites;
   },

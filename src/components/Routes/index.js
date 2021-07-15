@@ -13,7 +13,7 @@ const Routes = () => (
       <Route path="/properties" component={Properties} exact />
       <Route path="/properties/:id" component={Property} exact />
       <Route path="/login" component={Login} />
-      <Route path="/favorites/:username" component={Favorites} />
+      <Route path="/favorites" component={Favorites} />
     </Switch>
   </Router>
 );
