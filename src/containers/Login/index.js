@@ -29,7 +29,7 @@ const Login = () => {
       {error && <h3>{error}</h3>}
 
       {loading && <WaveLoading />}
-      {user && user.username && user.token && <Redirect to="/" />}
+      {user && user.username && user.token && <Redirect to="/properties" />}
       <LoginForm handleSubmit={handleSubmit} />
     </div>
   );

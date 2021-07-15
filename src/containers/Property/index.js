@@ -1,4 +1,4 @@
-/*  eslint-disable no-unreachable */
+/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import { getPropertyAsync } from '../../redux/propertySlice';
 const Property = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-
   const { loading, error, property } = useSelector((state) => state.property);
 
   useEffect(() => {
@@ -22,22 +21,29 @@ const Property = () => {
   if (error) {
     return <h1>{error}</h1>;
   }
-
-  if (property && property.error) {
-    return <h1>Error</h1>;
+  let name; let description; let
+    featuredImage;
+  let address; let
+    isForRent; let price;
+  if (typeof property === 'object' && property !== null && property.data.attributes) {
+    name = property.data.attributes.name;
+    address = property.data.attributes.address;
+    price = property.data.attributes.monthly_price;
+    description = property.data.attributes.description;
+    featuredImage = property.data.attributes.featured_image;
+    isForRent = property.data.attributes.is_for_rent;
   }
+  return (property
+    && (
+    <div>
+      <img src={featuredImage} alt="" />
+      <h2>{name}</h2>
+      <h2>{price}</h2>
+      <h2>{address}</h2>
+      <h2>{isForRent ? 'Available for rent' : 'Not available for rent'}</h2>
+      <h2>{description}</h2>
 
-  return (
-    property && property.data.attributes && (
-      <div>
-        <img src={property.data.attributes.featured_image} alt="" />
-        <h1>{property.data.attributes.name}</h1>
-        <h1>{property.data.attributes.address}</h1>
-        <h1>{property.data.attributes.description}</h1>
-        <h1>{property.data.attributes.is_for_Rent}</h1>
-        <h1>{property.data.attributes.monthly_price}</h1>
-        <hr />
-      </div>
+    </div>
     )
   );
 };
