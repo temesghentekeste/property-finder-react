@@ -3,7 +3,9 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { generateTokenURL } from '../api/apiEndPoints';
+import { axiosDefaults } from '../api/axiosParams';
 
+axiosDefaults();
 const initialState = {
   loading: false,
   login: false,

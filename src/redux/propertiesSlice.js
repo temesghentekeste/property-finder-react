@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { allPropertiesURL } from '../api/apiEndPoints';
+import { axiosDefaults, axiosHeders } from '../api/axiosParams';
 
 const initialState = {
   loading: false,
@@ -13,6 +14,8 @@ const initialState = {
 export const getPropertiesAsync = createAsyncThunk(
   'properties/getPropertiesAsync',
   async () => {
+    await axiosDefaults();
+    await axiosHeders();
     const response = await axios.get(allPropertiesURL);
     const properties = await response.data;
     return properties;
