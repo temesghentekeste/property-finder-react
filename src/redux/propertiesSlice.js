@@ -31,8 +31,6 @@ const propertiesSlice = createSlice({
       state.properties = [];
     },
     [getPropertiesAsync.fulfilled]: (state, action) => {
-      console.log('Fullfilled');
-
       state.loading = false;
       state.properties = action.payload;
     },
