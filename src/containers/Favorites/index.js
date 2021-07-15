@@ -22,24 +22,56 @@ const Favorites = () => {
     return <h1>{error}</h1>;
   }
 
-  if (
-    !favorites
-    || favorites === undefined
-    || favorites.data === undefined
-  ) {
+  if (!favorites || favorites === undefined || favorites.data === undefined) {
     return <WaveLoading />;
   }
 
   console.log(loading, error, favorites);
 
+  let ids = [];
+  let data = [];
+  if (favorites.data.length > 0) {
+    ids = favorites.data.map((item) => item.id);
+  }
+
+  if (favorites.included.length > 0) {
+    data = favorites.included.map((item, index) => {
+      const {
+        name,
+        monthly_price: price,
+        featured_image: image,
+        is_for_rent: isForRent,
+        description,
+        address,
+      } = item.attributes;
+      return {
+        id: parseInt(ids[index], 10),
+        name,
+        price,
+        image,
+        isForRent,
+        description,
+        address,
+      };
+    });
+  }
+
+  console.log(ids);
+  console.log(data);
+
   return (
     <div>
-      <h2>All Properties</h2>
-      {favorites.data.length > 0
-        && favorites.data.map((favorite) => (
+      <h2>All Favorites</h2>
+      {data.length > 0
+        && data.map((favorite) => (
           <FavoriteItem
             key={favorite.id}
             id={favorite.id}
+            name={favorite.name}
+            address={favorite.address}
+            description={favorite.description}
+            price={favorite.price}
+            image={favorite.image}
           />
         ))}
     </div>
