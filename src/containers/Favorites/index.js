@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const Favorites = () => {
-    console.log('favorires')
-    return (
-        <div>
-           <h1>Favorites</h1> 
-        </div>
-    )
-}
+  const { username } = useParams();
+  console.log('favorires for', username);
+  return (
+    <div>
+      <h1>Favorites</h1>
+    </div>
+  );
+};
 
-export default Favorites
+export default Favorites;
