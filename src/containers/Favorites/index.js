@@ -26,6 +26,10 @@ const Favorites = () => {
     return <WaveLoading />;
   }
 
+  if (favorites.data.length === 0) {
+    return <h1>Currently you don&apos;t have any favorites. Please add some.</h1>;
+  }
+
   console.log(loading, error, favorites);
 
   let ids = [];
