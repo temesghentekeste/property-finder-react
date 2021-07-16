@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import styles from './Signup.module.css';
 
 const SignupForm = ({ handleSubmit }) => {
   const [user, setUser] = useState({
@@ -19,9 +20,13 @@ const SignupForm = ({ handleSubmit }) => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.formContainer}>
+      <header className={styles.formContainer_header}>
+        <h2>Sign Up</h2>
+        <p>Hello there! Sign up and enjoy wonderful properies.</p>
+      </header>
       <form onSubmit={(e) => handleSubmit(e, user)}>
-        <div>
+        <div className={styles.formContainer__formInput}>
           <input
             type="text"
             id="username"
@@ -31,7 +36,7 @@ const SignupForm = ({ handleSubmit }) => {
             ref={usernameRef}
           />
         </div>
-        <div>
+        <div className={styles.formContainer__formInput}>
           <input
             type="password"
             id="password"
@@ -40,8 +45,8 @@ const SignupForm = ({ handleSubmit }) => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <button type="submit">Sign Up</button>
+        <div className={styles.formContainer__formInput}>
+          <button type="submit" className={styles.formContainer_btn}>Sign Up</button>
         </div>
       </form>
     </div>

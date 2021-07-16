@@ -22,7 +22,7 @@
 
 .available,
 .notAvailable {
-  background: green;
+  background: #ec5323;
   border-radius: 5px;
   padding: 0.3rem;
   display: inline-block;

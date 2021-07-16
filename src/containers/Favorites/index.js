@@ -78,6 +78,7 @@ const Favorites = () => {
               description={favorite.description}
               price={favorite.price}
               image={favorite.image}
+              isForRent={favorite.isForRent}
             />
           ))}
       </div>
