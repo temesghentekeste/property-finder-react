@@ -1,23 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const LoginForm = ({ handleSubmit }) => {
+const SignupForm = ({ handleSubmit }) => {
   const [user, setUser] = useState({
     username: '',
     password: '',
   });
 
-  const userNameRef = useRef();
-
-  useEffect(() => {
-    userNameRef.current.focus();
-  }, []);
-
+  const usernameRef = useRef();
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     setUser({ ...user, [name]: value });
   };
+
+  useEffect(() => {
+    usernameRef.current.focus();
+  }, []);
 
   return (
     <div>
@@ -29,7 +28,7 @@ const LoginForm = ({ handleSubmit }) => {
             name="username"
             value={user.username}
             onChange={handleChange}
-            ref={userNameRef}
+            ref={usernameRef}
           />
         </div>
         <div>
@@ -42,15 +41,15 @@ const LoginForm = ({ handleSubmit }) => {
           />
         </div>
         <div>
-          <button type="submit">Log In</button>
+          <button type="submit">Sign Up</button>
         </div>
       </form>
     </div>
   );
 };
 
-LoginForm.propTypes = {
+SignupForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-export default LoginForm;
+export default SignupForm;

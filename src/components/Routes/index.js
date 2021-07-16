@@ -5,6 +5,7 @@ import Property from '../../containers/Property';
 import Properties from '../../containers/Properties';
 import App from '../App';
 import Favorites from '../../containers/Favorites';
+import Signup from '../../containers/Signup';
 
 const Routes = () => (
   <Router>
@@ -13,6 +14,7 @@ const Routes = () => (
       <Route path="/properties" component={Properties} exact />
       <Route path="/properties/:id" component={Property} exact />
       <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
       <Route path="/favorites" component={Favorites} />
     </Switch>
   </Router>
