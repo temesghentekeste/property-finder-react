@@ -13,6 +13,7 @@ const FavoriteItem = ({
   image,
   isForRent,
   description,
+  handleFavorirtes,
 }) => (
   <div className={styles.favoriteCard} data-id={id}>
     <header>
@@ -23,7 +24,11 @@ const FavoriteItem = ({
         <div>
           <button type="button">
             {' '}
-            <FontAwesomeIcon icon={faHeart} className={styles.normalHeart} />
+            <FontAwesomeIcon
+              icon={faHeart}
+              className={styles.normalHeart}
+              onClick={() => handleFavorirtes(propertyId)}
+            />
           </button>
           <p>{name}</p>
         </div>
@@ -49,7 +54,6 @@ const FavoriteItem = ({
       <Link to={`/properties/${propertyId}`}>More...</Link>
     </footer>
   </div>
-
 );
 
 FavoriteItem.propTypes = {
@@ -61,6 +65,7 @@ FavoriteItem.propTypes = {
   description: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   isForRent: PropTypes.bool.isRequired,
+  handleFavorirtes: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default FavoriteItem;

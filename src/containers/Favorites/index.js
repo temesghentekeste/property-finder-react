@@ -65,6 +65,10 @@ const Favorites = () => {
   console.log(ids);
   console.log(data);
 
+  const handleFavorirtes = (propertyId) => {
+    console.log(typeof propertyId, propertyId);
+  };
+
   return (
     <section className={styles.favorites}>
       <h2 className={styles.favorites__heading}>All Favorites</h2>
@@ -81,6 +85,7 @@ const Favorites = () => {
               price={favorite.price}
               image={favorite.image}
               isForRent={favorite.isForRent}
+              handleFavorirtes={handleFavorirtes}
             />
           ))}
       </div>
