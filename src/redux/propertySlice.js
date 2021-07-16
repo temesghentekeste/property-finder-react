@@ -16,7 +16,7 @@ export const getPropertyAsync = createAsyncThunk(
     console.log('Called');
     await axiosDefaults();
     await axiosHeders();
-    const response = await axios.get(`properties/${id}`);
+    const response = await axios.get(`/properties/${id}`);
     const property = await response.data;
     return property;
   },

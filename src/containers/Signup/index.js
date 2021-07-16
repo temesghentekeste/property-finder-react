@@ -3,16 +3,26 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import WaveLoading from 'react-loadingg/lib/WaveLoading';
 import { Redirect } from 'react-router-dom';
+import { signupUser } from '../../redux/signupSlice';
 import SignupForm from '../../components/SignupForm';
 
 const Signup = () => {
   const dispatch = useDispatch();
 
-  console.log('login ...');
+  const {
+    signup, loading, error, user,
+  } = useSelector(
+    (state) => state.signupuser,
+  );
+
+  console.log('signup ...');
   const handleSubmit = (e, user) => {
     console.log(user);
     e.preventDefault();
+    dispatch(signupUser(user));
   };
+
+  console.log(signup, loading, error, user);
 
   return (
     <div>
