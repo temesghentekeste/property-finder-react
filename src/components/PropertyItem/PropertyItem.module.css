@@ -33,6 +33,14 @@
   background: #6566ac;
 }
 
+.favoriteHeart {
+  color: #ec5323;
+}
+
+.normalHeart {
+  color: #444;
+}
+
 .propertyCard__footer__price p {
   margin: 0;
 }

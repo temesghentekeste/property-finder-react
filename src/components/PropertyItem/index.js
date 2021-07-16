@@ -15,6 +15,7 @@ const PropertyItem = ({
     monthly_price: monthlyPrice,
     is_for_rent: isForRent,
     featured_image: featured,
+    is_favorite: isFavorite,
   },
   handleFavorirtes,
 }) => (
@@ -29,7 +30,7 @@ const PropertyItem = ({
           {' '}
           <FontAwesomeIcon
             icon={faHeart}
-            className={styles.normalHeart}
+            className={isFavorite ? styles.favoriteHeart : styles.normalHeart}
             onClick={() => handleFavorirtes(id)}
           />
         </button>
