@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { WaveLoading } from 'react-loadingg';
 import { getPropertiesAsync } from '../../redux/propertiesSlice';
-import PropertyItem from './PropertyItem';
+import PropertyItem from '../../components/PropertyItem';
 
 const Properties = () => {
   const dispatch = useDispatch();

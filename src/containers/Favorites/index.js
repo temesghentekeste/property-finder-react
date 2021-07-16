@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg/lib';
 import { getFavoritesAsync } from '../../redux/favoritesSlice';
-import FavoriteItem from './FavoriteItem';
+import FavoriteItem from '../../components/FavoriteItem';
 
 const Favorites = () => {
   const dispatch = useDispatch();
