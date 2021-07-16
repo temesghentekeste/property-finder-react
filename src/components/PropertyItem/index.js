@@ -15,21 +15,21 @@ const PropertyItem = ({
     featured_image: featured,
   },
 }) => (
-  <Link to={`/properties/${id}`}>
-    <div className={styles.propertyCard}>
-      <header>
-        <img src={featured} alt="" />
-      </header>
-      <div className={styles.propertyCard__body}>
-        <div className={styles.propertyCard__body__top}>
-          <p>{name}</p>
-          <span>{address}</span>
-        </div>
-        <div className={styles.propertyCard__body__bottom}>
-          <p>{description}</p>
-        </div>
+  <div className={styles.propertyCard}>
+    <header>
+      <img src={featured} alt="" />
+    </header>
+    <div className={styles.propertyCard__body}>
+      <div className={styles.propertyCard__body__top}>
+        <p>{name}</p>
+        <span>{address}</span>
       </div>
-      <footer className={styles.propertyCard__footer}>
+      <div className={styles.propertyCard__body__bottom}>
+        <p>{description}</p>
+      </div>
+    </div>
+    <footer className={styles.propertyCard__footer}>
+      <div className={styles.favoriteCard__footer__top}>
         <p className={isForRent ? styles.available : styles.notAvailable}>
           {isForRent ? 'Available' : 'Not Available'}
         </p>
@@ -40,9 +40,10 @@ const PropertyItem = ({
           </p>
           <span>per Month</span>
         </div>
-      </footer>
-    </div>
-  </Link>
+      </div>
+      <Link to={`/properties/${id}`}>More...</Link>
+    </footer>
+  </div>
 );
 
 PropertyItem.propTypes = {

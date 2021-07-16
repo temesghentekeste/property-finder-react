@@ -25,7 +25,7 @@ PropertyComponent.propTypes = {
   description: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  isForRent: PropTypes.string.isRequired,
+  isForRent: PropTypes.bool.isRequired,
 };
 
 export default PropertyComponent;

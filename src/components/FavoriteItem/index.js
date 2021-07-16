@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/fontawesome-free-solid';
 import styles from './favoriteItem.module.css';
 
 const FavoriteItem = ({
@@ -12,21 +14,27 @@ const FavoriteItem = ({
   isForRent,
   description,
 }) => (
-  <Link to={`/properties/${propertyId}`}>
-    <div className={styles.favoriteCard} data-id={id}>
-      <header>
-        <img src={image} alt="" />
-      </header>
-      <div className={styles.favoriteCard__body}>
-        <div className={styles.favoriteCard__body__top}>
+  <div className={styles.favoriteCard} data-id={id}>
+    <header>
+      <img src={image} alt="" />
+    </header>
+    <div className={styles.favoriteCard__body}>
+      <div className={styles.favoriteCard__body__top}>
+        <div>
+          <button type="button">
+            {' '}
+            <FontAwesomeIcon icon={faHeart} className={styles.normalHeart} />
+          </button>
           <p>{name}</p>
-          <span>{address}</span>
         </div>
-        <div className={styles.favoriteCard__body__bottom}>
-          <p>{description}</p>
-        </div>
+        <span>{address}</span>
       </div>
-      <footer className={styles.favoriteCard__footer}>
+      <div className={styles.favoriteCard__body__bottom}>
+        <p>{description}</p>
+      </div>
+    </div>
+    <footer className={styles.favoriteCard__footer}>
+      <div className={styles.favoriteCard__footer__top}>
         <p className={isForRent ? styles.available : styles.notAvailable}>
           {isForRent ? 'Available' : 'Not Available'}
         </p>
@@ -37,9 +45,10 @@ const FavoriteItem = ({
           </p>
           <span>per Month</span>
         </div>
-      </footer>
-    </div>
-  </Link>
+      </div>
+      <Link to={`/properties/${propertyId}`}>More...</Link>
+    </footer>
+  </div>
 
 );
 
