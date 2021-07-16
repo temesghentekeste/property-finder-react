@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/fontawesome-free-solid';
 import styles from './PropertyItem.module.css';
 
 const PropertyItem = ({
@@ -14,6 +16,7 @@ const PropertyItem = ({
     is_for_rent: isForRent,
     featured_image: featured,
   },
+  handleFavorirtes,
 }) => (
   <div className={styles.propertyCard}>
     <header>
@@ -22,6 +25,14 @@ const PropertyItem = ({
     <div className={styles.propertyCard__body}>
       <div className={styles.propertyCard__body__top}>
         <p>{name}</p>
+        <button type="button">
+          {' '}
+          <FontAwesomeIcon
+            icon={faHeart}
+            className={styles.normalHeart}
+            onClick={() => handleFavorirtes(id)}
+          />
+        </button>
         <span>{address}</span>
       </div>
       <div className={styles.propertyCard__body__bottom}>
@@ -49,6 +60,7 @@ const PropertyItem = ({
 PropertyItem.propTypes = {
   attributes: PropTypes.object.isRequired,
   id: PropTypes.string.isRequired,
+  handleFavorirtes: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default PropertyItem;

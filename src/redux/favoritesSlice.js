@@ -7,6 +7,7 @@ import { axiosDefaults, axiosHeders } from '../api/axiosParams';
 const initialState = {
   loading: false,
   favorites: [],
+  message: '',
   error: '',
 };
 
@@ -18,6 +19,23 @@ export const getFavoritesAsync = createAsyncThunk(
     const response = await axios.get('/favorites');
     const favorites = await response.data;
     return favorites;
+  },
+);
+
+export const createFavoriteAsync = createAsyncThunk(
+  'favorites/createFavoriteAsync',
+  async (propertyId) => {
+    const data = {
+      property_id: propertyId,
+    };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    const response = await axios.post('/favorites', data, {
+      headers,
+    });
+    const message = await response.data;
+    return message;
   },
 );
 
@@ -38,6 +56,22 @@ const favoritesSlice = createSlice({
     [getFavoritesAsync.rejected]: (state, action) => {
       state.loading = false;
       state.favorites = [];
+      state.error = 'Something went wrong, please log in and try again!';
+    },
+
+    [createFavoriteAsync.pending]: (state, action) => {
+      state.loading = true;
+      state.message = '';
+      state.error = '';
+    },
+    [createFavoriteAsync.fulfilled]: (state, action) => {
+      state.loading = true;
+      state.message = action.payload;
+      state.error = '';
+    },
+    [createFavoriteAsync.rejected]: (state, action) => {
+      state.loading = true;
+      state.message = '';
       state.error = 'Something went wrong, please log in and try again!';
     },
   },

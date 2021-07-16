@@ -4,15 +4,24 @@ import { WaveLoading } from 'react-loadingg';
 import styles from './Properties.module.css';
 
 import { getPropertiesAsync } from '../../redux/propertiesSlice';
+import { createFavoriteAsync } from '../../redux/favoritesSlice';
 import PropertyItem from '../../components/PropertyItem';
 
 const Properties = () => {
   const dispatch = useDispatch();
   const { loading, properties } = useSelector((state) => state.properties);
+  const { message } = useSelector((state) => state.favorites);
 
   useEffect(() => {
     dispatch(getPropertiesAsync());
   }, [dispatch]);
+
+  const handleFavorirtes = (propertyId) => {
+    console.log(typeof propertyId, propertyId);
+    dispatch(createFavoriteAsync(propertyId));
+  };
+
+  console.log(message);
 
   if (loading || loading === null || loading === undefined) {
     return <WaveLoading />;
@@ -40,6 +49,7 @@ const Properties = () => {
               key={property.id}
               id={property.id}
               attributes={property.attributes}
+              handleFavorirtes={handleFavorirtes}
             />
           ))}
       </div>

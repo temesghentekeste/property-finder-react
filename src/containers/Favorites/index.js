@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg/lib';
-import { getFavoritesAsync } from '../../redux/favoritesSlice';
+import { getFavoritesAsync, createFavoriteAsync } from '../../redux/favoritesSlice';
 import FavoriteItem from '../../components/FavoriteItem';
 import styles from './favorites.module.css';
 
 const Favorites = () => {
   const dispatch = useDispatch();
-  const { loading, error, favorites } = useSelector((state) => state.favorites);
+  const {
+    loading, error, favorites, message,
+  } = useSelector((state) => state.favorites);
 
   useEffect(() => {
     dispatch(getFavoritesAsync());
@@ -67,7 +69,10 @@ const Favorites = () => {
 
   const handleFavorirtes = (propertyId) => {
     console.log(typeof propertyId, propertyId);
+    dispatch(createFavoriteAsync(propertyId));
   };
+
+  console.log(message);
 
   return (
     <section className={styles.favorites}>
