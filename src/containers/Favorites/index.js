@@ -51,6 +51,7 @@ const Favorites = () => {
       } = item.attributes;
       return {
         id: parseInt(ids[index], 10),
+        propertyId: parseInt(item.id, 10),
         name,
         price,
         image,
@@ -73,6 +74,7 @@ const Favorites = () => {
             <FavoriteItem
               key={favorite.id}
               id={favorite.id}
+              propertyId={favorite.propertyId}
               name={favorite.name}
               address={favorite.address}
               description={favorite.description}
