@@ -1,39 +1,44 @@
 .favoriteCard {
-    background: #fff;
-    padding: 1rem;
-    margin: 0.5rem;
-    color: rgb(70, 67, 67);
-    font-weight: 400;
+  background: #fff;
+  padding: 1rem;
+  margin: 0.5rem;
+  color: rgb(70, 67, 67);
+  font-weight: 400;
 }
 
-.favoriteCard__body{
-    margin: 0.8rem 0.4rem;
+.favoriteCard__body {
+  margin: 0.8rem 0.4rem;
 }
 
 .favoriteCard__body__bottom {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .favoriteCard__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.available {
-    background: green;
-    padding: 0.3rem;
-    display: inline-block;
-    color: #fff;
+.available,
+.notAvailable {
+  background: #ec5323;
+  border-radius: 5px;
+  padding: 0.3rem;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+
 }
-.favoriteCard__footer__price p{
-    margin: 0;
+
+.notAvailable {
+  background: #6566ac;
+}
+.favoriteCard__footer__price p {
+  margin: 0;
 }
 
 .favoriteCard__body__top p:first-child {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
-
-
-
