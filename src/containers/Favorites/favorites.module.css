@@ -1,0 +1,11 @@
+.favorites {
+  margin: 1rem;
+}
+.favorites__container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.favorites__heading {
+  text-align: center;
+}

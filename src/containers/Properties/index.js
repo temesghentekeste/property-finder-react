@@ -31,9 +31,9 @@ const Properties = () => {
   }
 
   return (
-    <>
-      <h2>All Properties</h2>
-      <section className={styles.propertiesContainer}>
+    <section className={styles.properties}>
+      <h2 className={styles.properties__heading}>All Properties</h2>
+      <div className={styles.properties__container}>
         {properties.data.length > 0
           && properties.data.map((property) => (
             <PropertyItem
@@ -42,8 +42,8 @@ const Properties = () => {
               attributes={property.attributes}
             />
           ))}
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

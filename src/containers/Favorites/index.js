@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg/lib';
 import { getFavoritesAsync } from '../../redux/favoritesSlice';
 import FavoriteItem from '../../components/FavoriteItem';
+import styles from './favorites.module.css';
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -27,7 +26,9 @@ const Favorites = () => {
   }
 
   if (favorites.data.length === 0) {
-    return <h1>Currently you don&apos;t have any favorites. Please add some.</h1>;
+    return (
+      <h1>Currently you don&apos;t have any favorites. Please add some.</h1>
+    );
   }
 
   console.log(loading, error, favorites);
@@ -64,21 +65,23 @@ const Favorites = () => {
   console.log(data);
 
   return (
-    <div>
-      <h2>All Favorites</h2>
-      {data.length > 0
-        && data.map((favorite) => (
-          <FavoriteItem
-            key={favorite.id}
-            id={favorite.id}
-            name={favorite.name}
-            address={favorite.address}
-            description={favorite.description}
-            price={favorite.price}
-            image={favorite.image}
-          />
-        ))}
-    </div>
+    <section className={styles.favorites}>
+      <h2 className={styles.favorites__heading}>All Favorites</h2>
+      <div className={styles.favorites__container}>
+        {data.length > 0
+          && data.map((favorite) => (
+            <FavoriteItem
+              key={favorite.id}
+              id={favorite.id}
+              name={favorite.name}
+              address={favorite.address}
+              description={favorite.description}
+              price={favorite.price}
+              image={favorite.image}
+            />
+          ))}
+      </div>
+    </section>
   );
 };
 
