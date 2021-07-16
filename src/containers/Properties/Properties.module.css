@@ -1,0 +1,4 @@
+.propertiesContainer {
+  display: flex;
+  overflow-x: auto;
+}

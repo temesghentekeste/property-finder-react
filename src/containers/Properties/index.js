@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { WaveLoading } from 'react-loadingg';
+import styles from './Properties.module.css';
+
 import { getPropertiesAsync } from '../../redux/propertiesSlice';
 import PropertyItem from '../../components/PropertyItem';
 
@@ -30,17 +31,19 @@ const Properties = () => {
   }
 
   return (
-    <div>
+    <>
       <h2>All Properties</h2>
-      {properties.data.length > 0
-        && properties.data.map((property) => (
-          <PropertyItem
-            key={property.id}
-            id={property.id}
-            attributes={property.attributes}
-          />
-        ))}
-    </div>
+      <section className={styles.propertiesContainer}>
+        {properties.data.length > 0
+          && properties.data.map((property) => (
+            <PropertyItem
+              key={property.id}
+              id={property.id}
+              attributes={property.attributes}
+            />
+          ))}
+      </section>
+    </>
   );
 };
 
