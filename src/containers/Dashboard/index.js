@@ -33,13 +33,7 @@ const Dashboard = () => {
 
   return (
     <section>
-      {user.included.length > 0
-          && user.included.map((property) => (
-            <DashboardComp
-              key={property.id}
-              attributes={property.attributes}
-            />
-          ))}
+      {user.included.length > 0 && <DashboardComp data={user.included} />}
     </section>
   );
 };

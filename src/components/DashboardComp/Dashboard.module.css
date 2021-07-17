@@ -1,0 +1,30 @@
+.dashboard {
+  margin: 1rem 0;
+}
+
+.dashboard__name {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard__name img {
+  margin-left: 1rem;
+}
+
+.dashboard h3 {
+  color: rgb(109, 44, 129);
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+
+.dashboard span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgb(161, 87, 184);
+}
+
+.dashboard th {
+  font-weight: 700;
+  background: rgb(97, 95, 95);
+  color: #fff;
+}
