@@ -10,6 +10,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import roundTo from 'round-to';
 import styles from './Dashboard.module.css';
 
 const useStyles = makeStyles({
@@ -26,12 +27,13 @@ const DashboardComp = ({ data }) => {
         <h3>Manage your propertries</h3>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
-            <TableHead>
+            <TableHead className={styles.dashboard__table__head}>
               <TableRow>
                 <TableCell>Name</TableCell>
-                <TableCell align="right">Address</TableCell>
-                <TableCell align="right">Price&nbsp;($)</TableCell>
-                <TableCell align="right">Rentable</TableCell>
+                <TableCell align="left">Address</TableCell>
+                <TableCell align="left">Price&nbsp;($)</TableCell>
+                <TableCell align="left">Rentable</TableCell>
+                <TableCell align="left">Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -43,6 +45,7 @@ const DashboardComp = ({ data }) => {
                   featured_image: image,
                   is_for_rent: isForRent,
                   description,
+                  is_favorite: isFavorite,
                 } = row.attributes;
                 const { id } = row;
                 return (
@@ -54,9 +57,30 @@ const DashboardComp = ({ data }) => {
                     >
                       {name}
                     </TableCell>
-                    <TableCell align="right">{address}</TableCell>
-                    <TableCell align="right">{price}</TableCell>
-                    <TableCell align="right">{isForRent}</TableCell>
+                    <TableCell align="left">{address}</TableCell>
+                    <TableCell align="left">
+                      {roundTo(parseFloat(price), 2)}
+                    </TableCell>
+                    <TableCell align="left">
+                      {isForRent ? 'Yes' : 'No'}
+                    </TableCell>
+                    <TableCell
+                      align="left"
+                      className={styles.dashboard_actions}
+                    >
+                      <button
+                        type="button"
+                        className={styles.dashboard__actions__btnEdit}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.dashboard__actions__btnDelete}
+                      >
+                        Delete
+                      </button>
+                    </TableCell>
                   </TableRow>
                 );
               })}
