@@ -4,6 +4,7 @@ import propertyReducer from '../redux/propertySlice';
 import loginReducer from '../redux/loginSlice';
 import favoritesReducer from '../redux/favoritesSlice';
 import signupReducer from '../redux/signupSlice';
+import dashboardReducer from '../redux/dashboardSlice';
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     usernametoken: loginReducer,
     favorites: favoritesReducer,
     signupuser: signupReducer,
+    userdashboard: dashboardReducer,
   },
 });

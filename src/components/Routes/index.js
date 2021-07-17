@@ -11,13 +11,13 @@ import Dashboard from '../../containers/Dashboard';
 const Routes = () => (
   <Router>
     <Switch>
-      <Route path="/" exact component={App} />
+      <Route path="/dashboard" component={Dashboard} exact />
       <Route path="/properties" component={Properties} exact />
-      <Route path="/properties/:id" component={Property} exact />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+      <Route path="/login" component={Login} exact />
+      <Route path="/signup" component={Signup} exact />
       <Route path="/favorites" component={Favorites} />
-      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/properties/:id" component={Property} exact />
+      <Route path="/" exact component={App} />
     </Switch>
   </Router>
 );

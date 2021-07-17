@@ -1,9 +1,47 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { WaveLoading } from 'react-loadingg';
 
-const Dashboard = () => (
-  <div>
-    Your dashboard
-  </div>
-);
+import { getUserDashboard } from '../../redux/dashboardSlice';
+import DashboardComp from '../../components/DashboardComp';
+
+const Dashboard = () => {
+  const dispatch = useDispatch();
+  const { loading, error, user } = useSelector((state) => state.userdashboard);
+
+  useEffect(() => {
+    dispatch(getUserDashboard());
+  }, [dispatch]);
+
+  if (loading || loading === null || loading === undefined) {
+    return <WaveLoading />;
+  }
+
+  if (
+    !user
+    || user === null
+    || user === undefined
+    || user.data === undefined
+    || user.included === undefined
+  ) {
+    return <WaveLoading />;
+  }
+
+  if (user && user.error) {
+    return <h1>{error}</h1>;
+  }
+
+  return (
+    <section>
+      {user.included.length > 0
+          && user.included.map((property) => (
+            <DashboardComp
+              key={property.id}
+              attributes={property.attributes}
+            />
+          ))}
+    </section>
+  );
+};
 
 export default Dashboard;
