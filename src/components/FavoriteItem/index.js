@@ -22,14 +22,14 @@ const FavoriteItem = ({
     <div className={styles.favoriteCard__body}>
       <div className={styles.favoriteCard__body__top}>
         <div>
-          <button type="button">
+          <span>
             {' '}
             <FontAwesomeIcon
               icon={faHeart}
               className={styles.normalHeart}
               onClick={() => handleFavorirtes(propertyId)}
             />
-          </button>
+          </span>
           <p>{name}</p>
         </div>
         <span>{address}</span>

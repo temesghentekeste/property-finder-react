@@ -11,7 +11,6 @@ const PropertyItem = ({
   attributes: {
     name,
     address,
-    description,
     monthly_price: monthlyPrice,
     is_for_rent: isForRent,
     featured_image: featured,
@@ -25,19 +24,15 @@ const PropertyItem = ({
     </header>
     <div className={styles.propertyCard__body}>
       <div className={styles.propertyCard__body__top}>
-        <p>{name}</p>
-        <button type="button">
-          {' '}
+        <div>
+          <p>{name}</p>
           <FontAwesomeIcon
             icon={faHeart}
             className={isFavorite ? styles.favoriteHeart : styles.normalHeart}
             onClick={() => handleFavorirtes(id)}
           />
-        </button>
+        </div>
         <span>{address}</span>
-      </div>
-      <div className={styles.propertyCard__body__bottom}>
-        <p>{description}</p>
       </div>
     </div>
     <footer className={styles.propertyCard__footer}>
@@ -49,8 +44,8 @@ const PropertyItem = ({
           <p>
             $
             {Math.round(monthlyPrice, 2)}
+            <span>&nbsp;&nbsp;per Month</span>
           </p>
-          <span>per Month</span>
         </div>
       </div>
       <Link to={`/properties/${id}`}>More...</Link>
