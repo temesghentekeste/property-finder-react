@@ -10,8 +10,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import roundTo from 'round-to';
 import styles from './Dashboard.module.css';
+import FormDialog from '../Modals/FormDialgo';
 
 const useStyles = makeStyles({
   table: {
@@ -25,6 +25,7 @@ const DashboardComp = ({ data }) => {
     <div>
       <div className={styles.dashboard}>
         <h3>Manage your propertries</h3>
+        <FormDialog />
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead className={styles.dashboard__table__head}>
@@ -59,7 +60,7 @@ const DashboardComp = ({ data }) => {
                     </TableCell>
                     <TableCell align="left">{address}</TableCell>
                     <TableCell align="left">
-                      {roundTo(parseFloat(price), 2)}
+                      {Math.ceil(parseFloat(price))}
                     </TableCell>
                     <TableCell align="left">
                       {isForRent ? 'Yes' : 'No'}
