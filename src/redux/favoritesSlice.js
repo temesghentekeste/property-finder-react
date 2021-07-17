@@ -25,6 +25,8 @@ export const getFavoritesAsync = createAsyncThunk(
 export const createFavoriteAsync = createAsyncThunk(
   'favorites/createFavoriteAsync',
   async (propertyId) => {
+    await axiosDefaults();
+    await axiosHeders();
     const data = {
       property_id: propertyId,
     };

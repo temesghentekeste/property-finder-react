@@ -6,6 +6,7 @@ import Properties from '../../containers/Properties';
 import App from '../App';
 import Favorites from '../../containers/Favorites';
 import Signup from '../../containers/Signup';
+import Dashboard from '../../containers/Dashboard';
 
 const Routes = () => (
   <Router>
@@ -16,6 +17,7 @@ const Routes = () => (
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/favorites" component={Favorites} />
+      <Route path="/dashboard" component={Dashboard} />
     </Switch>
   </Router>
 );

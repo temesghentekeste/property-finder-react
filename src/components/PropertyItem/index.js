@@ -17,6 +17,7 @@ const PropertyItem = ({
     is_favorite: isFavorite,
   },
   handleFavorirtes,
+  favoriteFlag,
 }) => (
   <div className={styles.propertyCard}>
     <header>
@@ -25,11 +26,13 @@ const PropertyItem = ({
     <div className={styles.propertyCard__body}>
       <div className={styles.propertyCard__body__top}>
         <div>
-          <p>{name}</p>
+          <p>
+            {name}
+          </p>
           <FontAwesomeIcon
             icon={faHeart}
             className={isFavorite ? styles.favoriteHeart : styles.normalHeart}
-            onClick={() => handleFavorirtes(id)}
+            onClick={() => handleFavorirtes(id, !favoriteFlag)}
           />
         </div>
         <span>{address}</span>
@@ -57,6 +60,7 @@ PropertyItem.propTypes = {
   attributes: PropTypes.object.isRequired,
   id: PropTypes.string.isRequired,
   handleFavorirtes: PropTypes.instanceOf(Object).isRequired,
+  favoriteFlag: PropTypes.bool.isRequired,
 };
 
 export default PropertyItem;

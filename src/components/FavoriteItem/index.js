@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/fontawesome-free-solid';
 import styles from './favoriteItem.module.css';
 
 const FavoriteItem = ({
@@ -13,7 +11,6 @@ const FavoriteItem = ({
   image,
   isForRent,
   description,
-  handleFavorirtes,
 }) => (
   <div className={styles.favoriteCard} data-id={id}>
     <header>
@@ -22,14 +19,6 @@ const FavoriteItem = ({
     <div className={styles.favoriteCard__body}>
       <div className={styles.favoriteCard__body__top}>
         <div>
-          <span>
-            {' '}
-            <FontAwesomeIcon
-              icon={faHeart}
-              className={styles.normalHeart}
-              onClick={() => handleFavorirtes(propertyId)}
-            />
-          </span>
           <p>{name}</p>
         </div>
         <span>{address}</span>
@@ -65,7 +54,6 @@ FavoriteItem.propTypes = {
   description: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   isForRent: PropTypes.bool.isRequired,
-  handleFavorirtes: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default FavoriteItem;

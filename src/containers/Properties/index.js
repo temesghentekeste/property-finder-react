@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { WaveLoading } from 'react-loadingg';
 import styles from './Properties.module.css';
@@ -8,18 +8,21 @@ import { createFavoriteAsync } from '../../redux/favoritesSlice';
 import PropertyItem from '../../components/PropertyItem';
 
 const Properties = () => {
+  const [favoriteFlag, setFavoriteFlag] = useState(false);
   const dispatch = useDispatch();
   const { loading, properties } = useSelector((state) => state.properties);
   const { message } = useSelector((state) => state.favorites);
 
   useEffect(() => {
     dispatch(getPropertiesAsync());
-  }, [dispatch]);
+  }, [dispatch, favoriteFlag]);
 
-  const handleFavorirtes = (propertyId) => {
+  const handleFavorirtes = (propertyId, value) => {
     console.log(typeof propertyId, propertyId);
     dispatch(createFavoriteAsync(propertyId));
+    setFavoriteFlag(value);
   };
+  console.log('favorite flag', favoriteFlag);
 
   console.log(message);
 
@@ -50,6 +53,7 @@ const Properties = () => {
               id={property.id}
               attributes={property.attributes}
               handleFavorirtes={handleFavorirtes}
+              favoriteFlag={favoriteFlag}
             />
           ))}
       </div>
