@@ -32,6 +32,8 @@ const Dashboard = () => {
     return <h1>{error}</h1>;
   }
 
+  console.log(user);
+
   return (
     <section>
       <CreateProperty />

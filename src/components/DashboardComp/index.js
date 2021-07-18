@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,6 +19,11 @@ const useStyles = makeStyles({
 
 const DashboardComp = ({ data }) => {
   const classes = useStyles();
+
+  const handleEditDelete = (e) => {
+    alert('Comming soon feature!');
+  };
+
   return (
     <div>
       <div className={styles.dashboard}>
@@ -77,11 +81,14 @@ const DashboardComp = ({ data }) => {
                     >
                       <button
                         type="button"
+                        data-id={`edit-${id}`}
                         className={styles.dashboard__actions__btnEdit}
+                        onClick={handleEditDelete}
                       >
                         Edit
                       </button>
                       <button
+                        onClick={handleEditDelete}
                         type="button"
                         className={styles.dashboard__actions__btnDelete}
                       >
