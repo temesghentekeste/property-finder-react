@@ -11,7 +11,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './Dashboard.module.css';
-import FormDialog from '../Modals/FormDialgo';
+import CreatePropertyForm from './CreatePropertyForm';
 
 const useStyles = makeStyles({
   table: {
@@ -25,7 +25,6 @@ const DashboardComp = ({ data }) => {
     <div>
       <div className={styles.dashboard}>
         <h3>Manage your propertries</h3>
-        <FormDialog />
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead className={styles.dashboard__table__head}>
@@ -89,6 +88,11 @@ const DashboardComp = ({ data }) => {
           </Table>
         </TableContainer>
       </div>
+      <CreatePropertyForm />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
