@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from './CreatePropertyForm.module.css';
 
 const CreatePropertyForm = ({ handleSubmit }) => {
   const [property, setProperty] = useState({
@@ -8,7 +9,7 @@ const CreatePropertyForm = ({ handleSubmit }) => {
     description: '',
     price: '',
     image: '',
-    rentalbe: true,
+    rentable: false,
   });
 
   const handleChange = (e) => {
@@ -23,7 +24,7 @@ const CreatePropertyForm = ({ handleSubmit }) => {
 
   const handleCheck = (e) => {
     setProperty({ ...property, [e.target.name]: !property.rentalbe });
-    console.log('Checked...', property.rentable, e.target.name);
+    console.log('Checked...', property.rentable, e.target.name, property);
   };
 
   const submitFrom = (event) => {
@@ -39,58 +40,75 @@ const CreatePropertyForm = ({ handleSubmit }) => {
     handleSubmit(event, formData);
   };
 
-  console.log(handleSubmit);
-
   return (
-    <div className="App">
-      <h1>Image Uploader</h1>
-      <form onSubmit={submitFrom}>
-        <input
-          type="text"
-          name="name"
-          value={property.name}
-          onChange={handleChange}
-          placeholder="Name"
-        />
-        <input
-          type="text"
-          name="address"
-          value={property.address}
-          onChange={handleChange}
-          placeholder="Address"
-        />
-        <textarea
-          name="description"
-          value={property.description}
-          onChange={handleChange}
-          id="description"
-          cols="30"
-          rows="10"
-        />
-        <input
-          type="number"
-          name="price"
-          value={property.price}
-          onChange={handleChange}
-          placeholder="Monthly Price"
-        />
-        <input
-          type="checkbox"
-          name="rentable"
-          checked={property.rentalbe}
-          onChange={handleCheck}
-        />
-        {' '}
-        Rentable
-        <input
-          type="file"
-          accept="image/*"
-          multiple={false}
-          onChange={onImageChange}
-        />
+    <div className={styles.container}>
+      <h2>Create a new property</h2>
+      <div className={styles.formContainer}>
+        <form onSubmit={submitFrom}>
+          <div className={styles.formContainer__formInput}>
+            <input
+              type="text"
+              name="name"
+              value={property.name}
+              onChange={handleChange}
+              placeholder="Name"
+            />
+          </div>
+          <div className={styles.formContainer__formInput}>
+            <input
+              type="text"
+              name="address"
+              value={property.address}
+              onChange={handleChange}
+              placeholder="Address"
+            />
+          </div>
+          <div className={styles.formContainer__formInput}>
+            <input
+              type="number"
+              name="price"
+              value={property.price}
+              onChange={handleChange}
+              placeholder="Monthly Price"
+            />
+          </div>
+          <div className={styles.formContainer__formInput}>
+            <textarea
+              name="description"
+              value={property.description}
+              onChange={handleChange}
+              id="description"
+              placeholder="Proprty description goes here..."
+              cols="40"
+              rows="10"
+            />
+          </div>
 
-        <button type="submit">Submit</button>
-      </form>
+          <div className={styles.formContainer__checkbox}>
+            <input
+              type="checkbox"
+              name="rentable"
+              checked={property.rentalbe}
+              onChange={handleCheck}
+            />
+            {' '}
+            Rentable
+          </div>
+
+          <div className={styles.formContainer__formInput__file}>
+            <input
+              type="file"
+              accept="image/*"
+              multiple={false}
+              onChange={onImageChange}
+            />
+          </div>
+
+          <div className={styles.formContainer__formInput}>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

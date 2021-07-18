@@ -1,6 +1,9 @@
 :root {
-    --primary-color: #ec5323;
+  --primary-color: #ec5323;
 }
+
+
+
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -40,7 +43,7 @@
   color: #444;
 }
 
-.formContainer_header h2 {
+.container h2 {
   font-size: 1.8rem;
   font-weight: 600;
 }

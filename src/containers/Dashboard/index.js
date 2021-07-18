@@ -34,8 +34,8 @@ const Dashboard = () => {
 
   return (
     <section>
-      {user.included.length > 0 && <DashboardComp data={user.included} />}
       <CreateProperty />
+      {user.included.length > 0 && <DashboardComp data={user.included} />}
     </section>
   );
 };

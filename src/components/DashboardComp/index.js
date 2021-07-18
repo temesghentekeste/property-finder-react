@@ -11,7 +11,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './Dashboard.module.css';
-import CreatePropertyForm from './CreatePropertyForm';
 
 const useStyles = makeStyles({
   table: {
@@ -24,11 +23,12 @@ const DashboardComp = ({ data }) => {
   return (
     <div>
       <div className={styles.dashboard}>
-        <h3>Manage your propertries</h3>
+        <h4>Manage your propertries</h4>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead className={styles.dashboard__table__head}>
               <TableRow>
+                <TableCell>No.</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell align="left">Address</TableCell>
                 <TableCell align="left">Price&nbsp;($)</TableCell>
@@ -37,7 +37,7 @@ const DashboardComp = ({ data }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data.map((row) => {
+              {data.map((row, index) => {
                 const {
                   name,
                   address,
@@ -50,6 +50,13 @@ const DashboardComp = ({ data }) => {
                 const { id } = row;
                 return (
                   <TableRow key={id}>
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      className={styles.dashboard__number}
+                    >
+                      {`${index + 1}.`}
+                    </TableCell>
                     <TableCell
                       component="th"
                       scope="row"
