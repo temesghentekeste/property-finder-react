@@ -4,6 +4,7 @@ import { WaveLoading } from 'react-loadingg';
 
 import { getUserDashboard } from '../../redux/dashboardSlice';
 import DashboardComp from '../../components/DashboardComp';
+import CreateProperty from './CreateProperty';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const Dashboard = () => {
   return (
     <section>
       {user.included.length > 0 && <DashboardComp data={user.included} />}
+      <CreateProperty />
     </section>
   );
 };

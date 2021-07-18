@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { createNewProperty } from '../../../redux/dashboardSlice';
-
-const CreatePropertyForm = () => {
+const CreatePropertyForm = ({ handleSubmit }) => {
   const [property, setProperty] = useState({
     name: '',
     address: '',
@@ -12,15 +10,6 @@ const CreatePropertyForm = () => {
     image: '',
     rentalbe: true,
   });
-
-  const dispatch = useDispatch();
-
-  const {
-    created,
-    loading,
-    error,
-    property: createdPropery,
-  } = useSelector((state) => state.userdashboard);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,9 +26,7 @@ const CreatePropertyForm = () => {
     console.log('Checked...', property.rentable, e.target.name);
   };
 
-  console.log(loading, error, created, createdPropery, 'New one');
-
-  const handleSubmit = (event) => {
+  const submitFrom = (event) => {
     event.preventDefault();
     console.log(property);
     const formData = new FormData();
@@ -49,14 +36,15 @@ const CreatePropertyForm = () => {
     formData.append('is_for_rent', property.rentalbe);
     formData.append('monthly_price', property.price);
     formData.append('featured_image', property.image);
-    console.log(formData);
-    dispatch(createNewProperty(formData));
+    handleSubmit(event, formData);
   };
+
+  console.log(handleSubmit);
 
   return (
     <div className="App">
       <h1>Image Uploader</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitFrom}>
         <input
           type="text"
           name="name"
@@ -105,6 +93,10 @@ const CreatePropertyForm = () => {
       </form>
     </div>
   );
+};
+
+CreatePropertyForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default CreatePropertyForm;

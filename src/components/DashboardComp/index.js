@@ -88,11 +88,6 @@ const DashboardComp = ({ data }) => {
           </Table>
         </TableContainer>
       </div>
-      <CreatePropertyForm />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 };
