@@ -8,11 +8,9 @@ import reportWebVitals from './reportWebVitals';
 import store from './store';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <Routes />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
   document.getElementById('root'),
 );
 

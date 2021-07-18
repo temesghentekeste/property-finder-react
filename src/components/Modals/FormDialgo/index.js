@@ -47,7 +47,7 @@ export default function FormDialog() {
           />
           <TextField
             margin="dense"
-            id="name"
+            id="address"
             label="Address"
             type="text"
             fullWidth
@@ -55,15 +55,15 @@ export default function FormDialog() {
 
           <TextField
             margin="dense"
-            id="name"
-            label="Description"
+            id="description"
+            label="description"
             type="text"
             fullWidth
           />
 
           <TextField
             margin="dense"
-            id="name"
+            id="price"
             label="Monthly Price"
             type="number"
             fullWidth
