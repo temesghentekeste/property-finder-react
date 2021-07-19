@@ -4,6 +4,8 @@
 .favorites__container {
   display: flex;
   overflow-x: auto;
+  margin-top: 4rem;
+
 }
 
 .favorites__heading {

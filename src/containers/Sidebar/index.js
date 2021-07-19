@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -19,7 +20,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 import data from './data';
-import styles from './Sidebar.module.css';
+import './sidebar.css';
 
 const drawerWidth = 240;
 
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
   drawerH1: {
     color: '#444',
+    fontWeight: 'bold',
   },
   content: {
     flexGrow: 1,
@@ -85,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Sidebar() {
+export default function Sidebar({ currentPage }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -119,7 +121,9 @@ export default function Sidebar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              Properties Finder
+              Properties Finder |
+              {' '}
+              {currentPage}
             </Typography>
           </Toolbar>
         </AppBar>
@@ -143,14 +147,15 @@ export default function Sidebar() {
           </div>
           <Divider />
           <List>
-            {data.map((item) => (
-              <Link to={item.url} key={item.link}>
+            {data.map((item, index) => (
+              <Link to={(index !== data.length - 1) ? `/${item.url}` : `${item.url}`} key={item.link} className={classes.drawerH1}>
                 <ListItem button>
                   <ListItemIcon>
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.link} />
                 </ListItem>
+                <Divider />
               </Link>
             ))}
           </List>
@@ -159,3 +164,7 @@ export default function Sidebar() {
     </>
   );
 }
+
+Sidebar.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+};

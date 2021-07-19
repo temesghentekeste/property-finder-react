@@ -78,7 +78,7 @@ const Favorites = () => {
 
   return (
     <section className={styles.favorites}>
-      <Sidebar />
+      <Sidebar currentPage="Favorites" />
       <div className={styles.favorites__container}>
         {data.length > 0
           && data.map((favorite) => (

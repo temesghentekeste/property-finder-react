@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   return (
     <section>
-      <Sidebar />
+      <Sidebar currentPage="Dashboard" />
       <CreateProperty />
       {user.included.length > 0 && <DashboardComp data={user.included} />}
     </section>

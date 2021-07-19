@@ -66,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
   drawerH1: {
     color: '#444',
+    fontWeight: 'bold',
   },
   content: {
     flexGrow: 1,
@@ -103,7 +104,7 @@ export default function Home() {
     const now = Date.now();
     const tenSec = 10 * 1000;
     const plusTenSec = currentDocumentTimestamp + tenSec;
-    if (now > plusTenSec) {
+    if (now > plusTenSec && !open) {
       location.reload();
     }
   };
@@ -160,10 +161,10 @@ export default function Home() {
           <Divider />
           <List>
             {['Sign In', 'Sign Up'].map((text, index) => (
-              <Link to={index % 2 === 0 ? 'login' : 'signup'} key={text}>
+              <Link to={index % 2 === 0 ? 'login' : 'signup'} key={text} className={classes.drawerH1}>
                 <ListItem button>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <LockOpen /> : <AssignmentInd />}
+                    {index % 2 === 0 ? <LockOpen color="primary" /> : <AssignmentInd color="secondary" />}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItem>

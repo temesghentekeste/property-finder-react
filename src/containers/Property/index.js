@@ -34,7 +34,7 @@ const Property = () => {
     && property !== null
     && property.data.attributes
   ) {
-    attributes = property.data.attributes;
+    name = property.data.attributes.name;
     address = property.data.attributes.address;
     price = property.data.attributes.monthly_price;
     description = property.data.attributes.description;

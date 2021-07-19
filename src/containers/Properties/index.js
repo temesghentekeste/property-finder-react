@@ -50,7 +50,7 @@ const Properties = () => {
 
   return (
     <section className={styles.properties}>
-      <Sidebar />
+      <Sidebar currentPage="Properties" />
       <div className={styles.properties__container}>
         {properties.data.length > 0
           && properties.data.map((property) => (

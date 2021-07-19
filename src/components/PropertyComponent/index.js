@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
+import Sidebar from '../../containers/Sidebar';
+import styles from './Property.module.css';
 
 const PropertyComponent = ({
   name,
@@ -9,14 +11,35 @@ const PropertyComponent = ({
   image,
   isForRent,
 }) => (
-  <div>
-    <img src={image} alt={name} />
-    <h1>{name}</h1>
-    <h1>{address}</h1>
-    <h1>{price}</h1>
-    <h1>{description}</h1>
-    <h1>{isForRent ? 'Available' : 'Rented'}</h1>
-  </div>
+  <section className={styles.properyContainer}>
+    <Sidebar currentPage={name} />
+    <div className={styles.propertyCard}>
+      <img src={image} alt={name} />
+      <div className={styles.propertyCard__info}>
+        <p>
+          <span>Name: </span>
+          {name}
+        </p>
+        <p>
+          <span>Address: </span>
+          {address}
+        </p>
+        <p>
+          <span>Price: </span>
+          $
+          {price}
+        </p>
+        <p>
+          <span>Description: </span>
+          {description}
+        </p>
+        <p>
+          <span>Availability: </span>
+          {isForRent ? 'Available' : 'Rented'}
+        </p>
+      </div>
+    </div>
+  </section>
 );
 
 PropertyComponent.propTypes = {
