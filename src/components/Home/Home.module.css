@@ -1,0 +1,51 @@
+p {
+    color: rgb(94, 65, 65);
+    font-weight: bold;
+    opacity: 1;
+    font-size: 1.1rem;
+}
+.homeContainer:before { 
+    content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: url('../../assets/images/f2ce27b3a0bffea55e552dc8d07eb694.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+     opacity: 0.3;
+
+  }
+
+  .success, .error {
+    padding: 0.5rem;
+    background: rgb(94, 140, 226);
+    color:white;
+    font-size: 0.9rem;
+  }
+
+  .error {
+    background: rgb(158, 58, 88);
+
+  }
+
+.loginSignup, .loginSignupContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginSignup a{
+    margin-right: 0.5rem;
+    background: #5a6dc2;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.loginSignup a:last-child{
+    background: #0a5e64;
+}
