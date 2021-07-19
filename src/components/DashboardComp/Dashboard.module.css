@@ -11,10 +11,10 @@
   align-items: center;
 }
 
-.dashboard h3 {
+.dashboard h4 {
   color: #ec5323;
   margin: 1rem 0;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .dashboard span {

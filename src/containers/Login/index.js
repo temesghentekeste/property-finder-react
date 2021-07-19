@@ -17,7 +17,6 @@ const Login = () => {
   );
 
   const handleSubmit = (e, user) => {
-    console.log(user);
     e.preventDefault();
     dispatch(getUserTokenInfo(user));
 
@@ -27,8 +26,6 @@ const Login = () => {
   useEffect(() => {
     setShowMessage(false);
   }, []);
-
-  console.log(login, loading, error, user);
 
   return (
     <div className={common.loginSignupContainer}>

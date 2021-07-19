@@ -11,3 +11,10 @@
 .favorites__heading {
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  .favorites__container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

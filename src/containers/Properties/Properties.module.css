@@ -1,5 +1,5 @@
 .properties {
-    margin: 1rem;
+  margin: 1rem;
 }
 .properties__container {
   display: flex;
@@ -8,5 +8,12 @@
 }
 
 .properties__heading {
-    text-align: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .properties__container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

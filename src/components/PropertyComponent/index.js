@@ -11,7 +11,7 @@ const PropertyComponent = ({
   image,
   isForRent,
 }) => (
-  <section className={styles.properyContainer}>
+  <section className={styles.propertyContainer}>
     <Sidebar currentPage={name} />
     <div className={styles.propertyCard}>
       <img src={image} alt={name} />

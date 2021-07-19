@@ -24,12 +24,10 @@ const CreatePropertyForm = ({ handleSubmit }) => {
 
   const handleCheck = (e) => {
     setProperty({ ...property, [e.target.name]: !property.rentalbe });
-    console.log('Checked...', property.rentable, e.target.name, property);
   };
 
   const submitFrom = (event) => {
     event.preventDefault();
-    console.log(property);
     const formData = new FormData();
     formData.append('name', property.name);
     formData.append('address', property.address);
@@ -41,7 +39,7 @@ const CreatePropertyForm = ({ handleSubmit }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.dashboard__container}>
       <h2>Create a new property</h2>
       <div className={styles.formContainer}>
         <form onSubmit={submitFrom}>

@@ -13,7 +13,6 @@ const initialState = {
 export const getPropertyAsync = createAsyncThunk(
   'properties/getPropertiesAsync',
   async (id) => {
-    console.log('Called');
     await axiosDefaults();
     await axiosHeders();
     const response = await axios.get(`/properties/${id}`);
@@ -27,19 +26,16 @@ const propertySlice = createSlice({
   initialState,
   extraReducers: {
     [getPropertyAsync.pending]: (state, action) => {
-      console.log('pending');
       state.loading = true;
       state.properties = null;
       state.error = null;
     },
     [getPropertyAsync.fulfilled]: (state, action) => {
-      console.log('fulfilled');
       state.loading = false;
       state.property = action.payload;
       state.error = null;
     },
     [getPropertyAsync.rejected]: (state, action) => {
-      console.log('rejected');
       state.loading = false;
       state.property = null;
       state.error = 'Something went wrong, please try again!';

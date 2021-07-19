@@ -10,7 +10,7 @@ import Sidebar from '../Sidebar';
 const Favorites = () => {
   const dispatch = useDispatch();
   const {
-    loading, error, favorites, message,
+    loading, error, favorites,
   } = useSelector((state) => state.favorites);
 
   useEffect(() => {
@@ -34,8 +34,6 @@ const Favorites = () => {
       <h1>Currently you don&apos;t have any favorites. Please add some.</h1>
     );
   }
-
-  console.log(loading, error, favorites);
 
   let ids = [];
   let data = [];
@@ -66,15 +64,9 @@ const Favorites = () => {
     });
   }
 
-  console.log(ids);
-  console.log(data);
-
   const handleFavorirtes = (propertyId) => {
-    console.log(typeof propertyId, propertyId);
     dispatch(createFavoriteAsync(propertyId));
   };
-
-  console.log(message);
 
   return (
     <section className={styles.favorites}>

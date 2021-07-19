@@ -18,7 +18,6 @@ const Signup = () => {
   const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e, user) => {
-    console.log(user);
     e.preventDefault();
     dispatch(signupUser(user));
 
@@ -26,7 +25,6 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    console.log('Running');
     setShowMessage(false);
     localStorage.setItem('PropertyFinderUsername', null);
     localStorage.setItem('PropertyFinderToken', null);

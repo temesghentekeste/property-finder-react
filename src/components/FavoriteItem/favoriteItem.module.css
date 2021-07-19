@@ -4,6 +4,7 @@
   margin: 0.5rem;
   color: rgb(70, 67, 67);
   font-weight: 400;
+  flex: 0 0 80%;
 }
 
 .favoriteCard__body {
@@ -61,7 +62,7 @@
 }
 
 
-footer a {
+.favoriteCard__footer a {
     margin-top: 1rem;
     display: block;
     background: #ec5323;
@@ -70,4 +71,11 @@ footer a {
     color: #fff;
     font-weight: bold;
 
+}
+
+@media (min-width: 768px) {
+  .favoriteCard {
+    margin: 0.5rem;
+    flex: 0 0 20%;
+  }
 }

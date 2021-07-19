@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-alert */
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 const DashboardComp = ({ data }) => {
   const classes = useStyles();
 
-  const handleEditDelete = (e) => {
+  const handleEditDelete = () => {
     alert('Comming soon feature!');
   };
 
@@ -46,10 +46,7 @@ const DashboardComp = ({ data }) => {
                   name,
                   address,
                   monthly_price: price,
-                  featured_image: image,
                   is_for_rent: isForRent,
-                  description,
-                  is_favorite: isFavorite,
                 } = row.attributes;
                 const { id } = row;
                 return (

@@ -9,9 +9,10 @@ textarea {
 
 }
 
-.container {
+.dashboard__container {
   padding: 1rem;
   width: 90%;
+  margin-top: 5rem;
 }
 
 .formContainer {
@@ -28,7 +29,7 @@ textarea {
   width: 95%;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 16px;
   padding: 4px 7px;
   outline: 0;
   background: transparent;
@@ -63,9 +64,10 @@ textarea {
   color: #444;
 }
 
-.formContainer_header h2 {
-  font-size: 1.8rem;
+.dashboard__container h2 {
+  font-size: 1.2rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .formContainer__checkbox {
@@ -81,9 +83,9 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-    .container {
+    .dashboard__container {
         width: 50%;
         text-align: center;
-        margin: auto;
+        margin: 5rem auto;
     }
 }

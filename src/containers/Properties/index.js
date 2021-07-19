@@ -23,7 +23,6 @@ const Properties = () => {
   }, [dispatch, favoriteFlag]);
 
   const handleFavorirtes = (propertyId, value) => {
-    console.log(typeof propertyId, propertyId);
     dispatch(createFavoriteAsync(propertyId));
     setFavoriteFlag(value);
   };

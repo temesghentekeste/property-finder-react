@@ -27,8 +27,6 @@ export const createNewProperty = createAsyncThunk(
   'propperies/createNewProperty',
   async (newProperty) => {
     const data = newProperty;
-    console.log(data);
-    console.log('**************');
     await axiosDefaults();
     await axiosHeders();
     const headers = {

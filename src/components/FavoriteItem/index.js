@@ -27,7 +27,7 @@ const FavoriteItem = ({
         <p>{description}</p>
       </div>
     </div>
-    <footer className={styles.favoriteCard__footer}>
+    <div className={styles.favoriteCard__footer}>
       <div className={styles.favoriteCard__footer__top}>
         <p className={isForRent ? styles.available : styles.notAvailable}>
           {isForRent ? 'Available' : 'Not Available'}
@@ -41,7 +41,7 @@ const FavoriteItem = ({
         </div>
       </div>
       <Link to={`/properties/${propertyId}`}>More...</Link>
-    </footer>
+    </div>
   </div>
 );
 

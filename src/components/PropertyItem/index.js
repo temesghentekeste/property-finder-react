@@ -38,7 +38,7 @@ const PropertyItem = ({
         <span>{address}</span>
       </div>
     </div>
-    <footer className={styles.propertyCard__footer}>
+    <div className={styles.propertyCard__footer}>
       <div className={styles.favoriteCard__footer__top}>
         <p className={isForRent ? styles.available : styles.notAvailable}>
           {isForRent ? 'Available' : 'Not Available'}
@@ -52,7 +52,7 @@ const PropertyItem = ({
         </div>
       </div>
       <Link to={`/properties/${id}`}>More...</Link>
-    </footer>
+    </div>
   </div>
 );
 

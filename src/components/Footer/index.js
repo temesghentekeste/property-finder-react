@@ -6,7 +6,7 @@ const Footer = () => (
       <a href="https://www.temesghen.me" target="_blank" rel="noreferrer">
         &copy;Temesghen Tekeste
       </a>
-      2021, All Rights Reserved
+      &nbsp;2021, All Rights Reserved
     </p>
   </footer>
 );

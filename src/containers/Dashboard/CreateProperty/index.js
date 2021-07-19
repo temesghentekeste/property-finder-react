@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -22,8 +23,6 @@ const CreateProperty = () => {
     await dispatch(createNewProperty(property));
     await dispatch(getUserDashboard());
   };
-
-  console.log(loading, error, created, createdPropery, 'New one');
 
   return (
     <div className={styles.createNewPropertyContainer}>

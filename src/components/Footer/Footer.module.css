@@ -1,18 +1,15 @@
 .mainFooter {
+  min-height: 500px;
   margin-top: auto;
-  padding: 2rem;
-  background: #615f5f;
+  padding: 1.5rem 0.4rem 5rem;
+  background: #6d676781;
   text-align: center;
-  color: #fff;
+  color: rgb(179, 173, 173);
+  font-size: 0.85rem;
 }
 
 .mainFooter a {
   transition: ease-in-out 0.3s;
-}
-
-.mainFooter {
-  padding: 1.5rem 0.4rem;
-  font-size: 0.85rem;
 }
 
 .mainFooter__text {
@@ -23,4 +20,5 @@
 footer a {
   background: none;
   display: inline-block;
+  color: #fff;
 }
