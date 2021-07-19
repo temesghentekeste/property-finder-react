@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-globals */
-import React, { useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -16,10 +17,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { AssignmentInd, LockOpen } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import styles from './Home.module.css';
-import LoginSignUp from './LoginSignUp';
+import data from './data';
+import styles from './Sidebar.module.css';
 
 const drawerWidth = 240;
 
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+export default function Sidebar() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -97,22 +97,6 @@ export default function Home() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const reloadPage = () => {
-    const currentDocumentTimestamp = new Date(performance.timing.domLoading).getTime();
-    const now = Date.now();
-    const tenSec = 10 * 1000;
-    const plusTenSec = currentDocumentTimestamp + tenSec;
-    if (now > plusTenSec) {
-      location.reload();
-    }
-  };
-  reloadPage();
-
-  useEffect(() => {
-    localStorage.setItem('PropertyFinderUsername', null);
-    localStorage.setItem('PropertyFinderToken', null);
-  }, []);
 
   return (
     <>
@@ -159,31 +143,19 @@ export default function Home() {
           </div>
           <Divider />
           <List>
-            {['Sign In', 'Sign Up'].map((text, index) => (
-              <Link to={index % 2 === 0 ? 'login' : 'signup'} key={text}>
+            {data.map((item) => (
+              <Link to={item.url} key={item.link}>
                 <ListItem button>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <LockOpen /> : <AssignmentInd />}
+                    {item.icon}
                   </ListItemIcon>
-                  <ListItemText primary={text} />
+                  <ListItemText primary={item.link} />
                 </ListItem>
               </Link>
             ))}
           </List>
         </Drawer>
-        <main
-          className={clsx(classes.content, {
-            [classes.contentShift]: open,
-          })}
-        >
-          <div className={classes.drawerHeader} />
-          <h1 className={classes.drawerH1}>Property Finder</h1>
-          <p className={styles.homeContainer}>
-            Start an amazing journey of enjoying stunning properties all over the world.
-          </p>
-        </main>
       </div>
-      <LoginSignUp />
     </>
   );
 }

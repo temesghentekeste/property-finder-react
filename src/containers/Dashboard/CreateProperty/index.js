@@ -1,7 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createNewProperty, getUserDashboard } from '../../../redux/dashboardSlice';
+import {
+  createNewProperty,
+  getUserDashboard,
+} from '../../../redux/dashboardSlice';
 import CreatePropertyForm from '../../../components/DashboardComp/CreatePropertyForm';
+import styles from './CreateProperty.module.css';
 
 const CreateProperty = () => {
   const dispatch = useDispatch();
@@ -22,7 +26,7 @@ const CreateProperty = () => {
   console.log(loading, error, created, createdPropery, 'New one');
 
   return (
-    <div>
+    <div className={styles.createNewPropertyContainer}>
       <CreatePropertyForm handleSubmit={handleSubmit} />
     </div>
   );

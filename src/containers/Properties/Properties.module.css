@@ -4,6 +4,7 @@
 .properties__container {
   display: flex;
   overflow-x: auto;
+  margin-top: 4rem;
 }
 
 .properties__heading {

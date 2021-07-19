@@ -12,7 +12,6 @@ const LoginForm = ({ handleSubmit }) => {
   });
 
   const userNameRef = useRef();
-
   useEffect(() => {
     userNameRef.current.focus();
   }, []);
@@ -51,7 +50,7 @@ const LoginForm = ({ handleSubmit }) => {
           />
         </div>
         <div className={styles.formContainer__formInput}>
-          <button type="submit" className={styles.formContainer_btn}>Log In</button>
+          <button type="submit" className={styles.formContainer_btn}>Sign In</button>
         </div>
       </form>
 

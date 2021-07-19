@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg/lib';
+import { Redirect } from 'react-router-dom';
 import { getFavoritesAsync, createFavoriteAsync } from '../../redux/favoritesSlice';
 import FavoriteItem from '../../components/FavoriteItem';
 import styles from './favorites.module.css';
+import Sidebar from '../Sidebar';
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -15,12 +17,12 @@ const Favorites = () => {
     dispatch(getFavoritesAsync());
   }, [dispatch]);
 
-  if (loading || loading === null || favorites === null) {
-    return <WaveLoading />;
+  if (!localStorage.getItem('PropertyFinderUsername') || error) {
+    return <Redirect to="/" />;
   }
 
-  if (error) {
-    return <h1>{error}</h1>;
+  if (loading || loading === null || favorites === null) {
+    return <WaveLoading />;
   }
 
   if (!favorites || favorites === undefined || favorites.data === undefined) {
@@ -76,7 +78,7 @@ const Favorites = () => {
 
   return (
     <section className={styles.favorites}>
-      <h2 className={styles.favorites__heading}>All Favorites</h2>
+      <Sidebar />
       <div className={styles.favorites__container}>
         {data.length > 0
           && data.map((favorite) => (

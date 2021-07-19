@@ -28,6 +28,8 @@ const Signup = () => {
   useEffect(() => {
     console.log('Running');
     setShowMessage(false);
+    localStorage.setItem('PropertyFinderUsername', null);
+    localStorage.setItem('PropertyFinderToken', null);
   }, []);
 
   return (

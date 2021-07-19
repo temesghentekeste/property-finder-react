@@ -33,9 +33,9 @@ const Login = () => {
   return (
     <div className={common.loginSignupContainer}>
       {showMessage && error && (
-      <div className={common.error}>
-        Incorrect username or password. Please try again!.
-      </div>
+        <div className={common.error}>
+          Incorrect username or password. Please try again!.
+        </div>
       )}
       {loading && <WaveLoading />}
       {user && user.username && user.token && <Redirect to="/properties" />}
