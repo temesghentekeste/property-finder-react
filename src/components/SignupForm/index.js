@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import HomeIcon from '@material-ui/icons/Home';
 import styles from './Signup.module.css';
+import common from '../../common/common.module.css';
 
 const SignupForm = ({ handleSubmit }) => {
   const [user, setUser] = useState({
@@ -56,6 +58,12 @@ const SignupForm = ({ handleSubmit }) => {
       <div className={styles.signin}>
         <span>If you already have an account,&nbsp;</span>
         <Link to="/login">sign in</Link>
+      </div>
+      <div className={common.backToHome}>
+        <Link to="/">
+          Back to&nbsp;
+          <HomeIcon />
+        </Link>
       </div>
     </div>
   );
