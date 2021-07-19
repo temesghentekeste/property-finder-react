@@ -1,0 +1,26 @@
+.mainFooter {
+  margin-top: auto;
+  padding: 2rem;
+  background: #615f5f;
+  text-align: center;
+  color: #fff;
+}
+
+.mainFooter a {
+  transition: ease-in-out 0.3s;
+}
+
+.mainFooter {
+  padding: 1.5rem 0.4rem;
+  font-size: 0.85rem;
+}
+
+.mainFooter__text {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+footer a {
+  background: none;
+  display: inline-block;
+}

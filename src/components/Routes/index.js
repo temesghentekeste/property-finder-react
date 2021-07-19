@@ -7,6 +7,7 @@ import App from '../App';
 import Favorites from '../../containers/Favorites';
 import Signup from '../../containers/Signup';
 import Dashboard from '../../containers/Dashboard';
+import Footer from '../Footer';
 
 const Routes = () => (
   <Router>
@@ -19,6 +20,7 @@ const Routes = () => (
       <Route path="/signup" component={Signup} exact />
       <Route path="/" exact component={App} />
     </Switch>
+    <Footer />
   </Router>
 );
 

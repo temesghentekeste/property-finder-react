@@ -180,7 +180,7 @@ export default function Home() {
           <div className={classes.drawerHeader} />
           <h1 className={classes.drawerH1}>Property Finder</h1>
           <p className={styles.homeContainer}>
-            Start an amazing journey of enjoying stunning properties all over the world.
+            Start an amazing journey of enjoying stunning properties around the globe.
           </p>
         </main>
       </div>
