@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import WaveLoading from 'react-loadingg/lib/WaveLoading';
 import { Redirect } from 'react-router-dom';
 import { getUserTokenInfo } from '../../redux/loginSlice';
 import LoginForm from '../../components/LoginForm';
+import common from '../../common/common.module.css';
 
 const Login = () => {
+  const [showMessage, setShowMessage] = useState(false);
   const dispatch = useDispatch();
   const {
     login, loading, error, user,
@@ -14,23 +16,31 @@ const Login = () => {
     (state) => state.usernametoken,
   );
 
-  console.log('login ...');
   const handleSubmit = (e, user) => {
     console.log(user);
     e.preventDefault();
     dispatch(getUserTokenInfo(user));
+
+    setShowMessage(true);
   };
+
+  useEffect(() => {
+    setShowMessage(false);
+  }, []);
 
   console.log(login, loading, error, user);
 
   return (
-    <>
-      {error && <h3>{error}</h3>}
-
+    <div className={common.loginSignupContainer}>
+      {showMessage && error && (
+      <div className={common.error}>
+        Incorrect username or password. Please try again!.
+      </div>
+      )}
       {loading && <WaveLoading />}
       {user && user.username && user.token && <Redirect to="/properties" />}
       <LoginForm handleSubmit={handleSubmit} />
-    </>
+    </div>
   );
 };
 

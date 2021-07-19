@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './LoginForm.module.css';
 
 const LoginForm = ({ handleSubmit }) => {
@@ -21,9 +22,9 @@ const LoginForm = ({ handleSubmit }) => {
   };
 
   return (
-    <div className={styles.formContainer}>
+    <div className={`${styles.formContainer} ${styles.content}`}>
       <header className={styles.formContainer_header}>
-        <h2>Log In</h2>
+        <h2>Sign In</h2>
         <p>Hello there! Log in and start managing your system.</p>
       </header>
 
@@ -51,6 +52,11 @@ const LoginForm = ({ handleSubmit }) => {
           <button type="submit" className={styles.formContainer_btn}>Log In</button>
         </div>
       </form>
+
+      <div className={styles.signup}>
+        <span>If you are new, please,&nbsp;</span>
+        <Link to="/signup">Sign up</Link>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Signup.module.css';
 
@@ -20,8 +21,9 @@ const SignupForm = ({ handleSubmit }) => {
   }, []);
 
   return (
-    <div className={styles.formContainer}>
+    <div className={`${styles.formContainer} ${styles.content}`}>
       <header className={styles.formContainer_header}>
+
         <h2>Sign Up</h2>
         <p>Hello there! Sign up and enjoy wonderful properies.</p>
       </header>
@@ -46,15 +48,22 @@ const SignupForm = ({ handleSubmit }) => {
           />
         </div>
         <div className={styles.formContainer__formInput}>
-          <button type="submit" className={styles.formContainer_btn}>Sign Up</button>
+          <button type="submit" className={styles.formContainer_btn}>
+            Sign Up
+          </button>
         </div>
       </form>
+      <div className={styles.signin}>
+        <span>If you already have an account,&nbsp;</span>
+        <Link to="/login">sign in</Link>
+      </div>
     </div>
   );
 };
 
 SignupForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+
 };
 
 export default SignupForm;

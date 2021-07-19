@@ -1,37 +1,51 @@
 /* eslint-disable no-unused-vars */
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import WaveLoading from 'react-loadingg/lib/WaveLoading';
-import { Redirect } from 'react-router-dom';
+
 import { signupUser } from '../../redux/signupSlice';
 import SignupForm from '../../components/SignupForm';
+import common from '../../common/common.module.css';
 
 const Signup = () => {
   const dispatch = useDispatch();
 
-  const {
-    signup, loading, error, user,
-  } = useSelector(
-    (state) => state.signupuser,
-  );
+  const { signup, loading } = useSelector((state) => state.signupuser);
 
-  console.log('signup ...');
+  const { error, user } = useSelector((state) => state.signupuser);
+
+  const [showMessage, setShowMessage] = useState(false);
+
   const handleSubmit = (e, user) => {
     console.log(user);
     e.preventDefault();
     dispatch(signupUser(user));
+
+    setShowMessage(true);
   };
 
-  console.log(signup, loading, error, user);
+  useEffect(() => {
+    console.log('Running');
+    setShowMessage(false);
+  }, []);
 
   return (
-    <>
-      {/* {error && <h3>{error}</h3>} */}
+    <div className={common.loginSignupContainer}>
+      {showMessage && error && (
+      <div className={common.error}>
+        Username and password are required, or try a different username.
+      </div>
+      )}
+      {showMessage && user && user.data && (
+      <div className={common.success}>
+        Account created successfully! Sign in to proceed.
+      </div>
+      )}
+      {showMessage && loading && <WaveLoading />}
 
-      {/* {loading && <WaveLoading />} */}
-      {/* {user && user.username && user.token && <Redirect to="/properties" />} */}
       <SignupForm handleSubmit={handleSubmit} />
-    </>
+    </div>
   );
 };
 
