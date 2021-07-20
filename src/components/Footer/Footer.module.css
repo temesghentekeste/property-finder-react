@@ -1,16 +1,18 @@
 .mainFooter {
-  min-height: 500px;
-  margin-top: auto;
+  height: 70px;
+  margin-top: 5rem;
   padding: 1.5rem 0.4rem 5rem;
-  background: #6d676781;
+  background: #03030381;
   text-align: center;
-  color: rgb(179, 173, 173);
+  color: rgb(235, 229, 229);
   font-size: 0.85rem;
+  opacity: 1;
 }
 
 .mainFooter__text {
   color: #fff;
   font-size: 0.85rem;
+  font-weight: bold;
 }
 
 footer a {
