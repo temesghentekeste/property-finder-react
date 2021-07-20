@@ -41,3 +41,11 @@ it('renders the property component', () => {
 
   expect(component).toMatchSnapshot();
 });
+
+test('should render Property component with correct name', () => {
+    const propertyEl = getByTestId('property-name');
+  
+    expect(propertyEl).toHaveTextContent('Test Property');
+  });
+
+  

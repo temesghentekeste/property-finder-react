@@ -16,7 +16,7 @@ const PropertyComponent = ({
     <div className={styles.propertyCard} data-testid="property">
       <img src={image} alt={name} />
       <div className={styles.propertyCard__info}>
-        <p>
+        <p data-testid="property-name">
           <span>Name: </span>
           {name}
         </p>
