@@ -23,10 +23,12 @@ const SignupForm = ({ handleSubmit }) => {
   }, []);
 
   return (
-    <div className={`${styles.formContainer} ${styles.content}`}>
+    <div
+      className={`${styles.formContainer} ${styles.content}`}
+      data-testid="SignupForm"
+    >
       <header className={styles.formContainer_header}>
-
-        <h2>Sign Up</h2>
+        <h2 data-testid="SignupForm-heading">Sign Up</h2>
         <p>Hello there! Sign up and enjoy wonderful properies.</p>
       </header>
       <form onSubmit={(e) => handleSubmit(e, user)}>
@@ -71,7 +73,6 @@ const SignupForm = ({ handleSubmit }) => {
 
 SignupForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-
 };
 
 export default SignupForm;

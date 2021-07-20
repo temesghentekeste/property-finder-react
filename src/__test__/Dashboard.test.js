@@ -35,7 +35,7 @@ it('renders the Dashboard', () => {
           <Dashboard user={user} />
         </Router>
         ,
-      </Provider>
+      </Provider>,
     )
     .toJSON();
 
