@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import WaveLoading from 'react-loadingg/lib/WaveLoading';
 
 import { signupUser } from '../../redux/signupSlice';

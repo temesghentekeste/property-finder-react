@@ -41,6 +41,7 @@
 .notAvailable {
   background: #6566ac;
 }
+
 .favoriteCard__footer__price p {
   margin: 0;
 }
@@ -61,16 +62,14 @@
   background: transparent;
 }
 
-
 .favoriteCard__footer a {
-    margin-top: 1rem;
-    display: block;
-    background: #ec5323;
-    padding: 0.5rem 0.8rem;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-
+  margin-top: 1rem;
+  display: block;
+  background: #ec5323;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {

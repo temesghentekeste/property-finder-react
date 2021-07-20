@@ -1,6 +1,7 @@
 .properties {
   margin: 1rem;
 }
+
 .properties__container {
   display: flex;
   overflow-x: auto;

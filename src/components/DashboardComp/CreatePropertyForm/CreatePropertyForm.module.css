@@ -6,7 +6,6 @@ textarea {
   width: 95%;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
-
 }
 
 .dashboard__container {
@@ -83,9 +82,9 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-    .dashboard__container {
-        width: 50%;
-        text-align: center;
-        margin: 5rem auto;
-    }
+  .dashboard__container {
+    width: 50%;
+    text-align: center;
+    margin: 5rem auto;
+  }
 }

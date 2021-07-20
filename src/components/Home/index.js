@@ -116,7 +116,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className={styles.homeContainer}>
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
@@ -173,18 +173,18 @@ export default function Home() {
           </List>
         </Drawer>
         <main
-          className={clsx(classes.content, {
+          className={`${styles.homeContainer} ${clsx(classes.content, {
             [classes.contentShift]: open,
-          })}
+          })}`}
         >
-          <div className={classes.drawerHeader} />
+          <div className={`${classes.drawerHeader}`} />
           <h1 className={classes.drawerH1}>Property Finder</h1>
-          <p className={styles.homeContainer}>
+          <p>
             Start an amazing journey of enjoying stunning properties around the globe.
           </p>
         </main>
       </div>
       <LoginSignUp />
-    </>
+    </div>
   );
 }

@@ -4,7 +4,8 @@ p {
   opacity: 1;
   font-size: 1.1rem;
 }
-.homeContainer:before {
+
+.homeContainer::before {
   content: '';
   position: absolute;
   top: 0;
@@ -12,7 +13,7 @@ p {
   left: 0;
   right: 0;
   z-index: 1;
-  background: url('../../assets/images/f2ce27b3a0bffea55e552dc8d07eb694.jpg');
+  background: url('../../assets/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.3;

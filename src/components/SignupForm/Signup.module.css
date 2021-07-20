@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #ec5323;
+  --primary-color: #ec5323;
 }
 
 .content {
-  position: relative; 
+  position: relative;
   z-index: 2;
 }
 
@@ -15,7 +15,6 @@
   height: 100vh;
   text-align: center;
 }
-
 
 .formContainer__formInput {
   margin-bottom: 1.5rem;
@@ -38,7 +37,7 @@
   font-weight: bold;
   color: #fff;
   font-size: 0.8rem;
-
+  cursor: pointer;
 }
 
 .formContainer_header {
@@ -54,6 +53,6 @@
 }
 
 .formContainer_header p {
-  font-style: 0.9rem;
   font-weight: normal;
 }
+

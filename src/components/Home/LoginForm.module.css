@@ -3,11 +3,9 @@
 }
 
 .content {
-  position: relative; 
+  position: relative;
   z-index: 2;
 }
-
-
 
 .formContainer {
   display: flex;
@@ -54,11 +52,11 @@
 }
 
 .formContainer_header p {
-  font-style: 0.9rem;
   font-weight: normal;
 }
 
-.signup, .signin {
+.signup,
+.signin {
   width: 100px;
   background-color: #ec5323;
   border-radius: 5px;
@@ -70,7 +68,7 @@
   background: #09546b;
 }
 
-
-.signup a, .signin a {
+.signup a,
+.signin a {
   color: #fff;
 }

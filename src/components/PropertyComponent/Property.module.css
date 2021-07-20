@@ -1,4 +1,4 @@
-.propertyContainer  img {
+.propertyContainer img {
   width: 100%;
 }
 
@@ -7,11 +7,13 @@
   padding: 0.5rem 0;
   border-bottom: 1px dotted #444;
 }
+
 .propertyContainer {
   padding: 1rem;
   margin: 4rem auto;
   width: 100%;
 }
+
 .propertyCard {
   margin: 1rem;
 }
@@ -21,13 +23,12 @@
   background: white;
 }
 
-
 @media (min-width: 768px) {
   .propertyContainer {
     width: 70%;
   }
 
-  .propertyContainer  img {
+  .propertyContainer img {
     width: 60%;
   }
 }
