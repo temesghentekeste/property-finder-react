@@ -48,10 +48,16 @@
 }
 
 .formContainer_header h2 {
+  margin-bottom: 0.5rem;
   font-size: 1.8rem;
   font-weight: 600;
 }
 
 .formContainer_header p {
   font-weight: normal;
+}
+
+.formContainer input {
+  width: 90%;
+  margin: auto;
 }

@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
-import styles from './LoginForm.module.css';
 import common from '../../common/common.module.css';
+import styles from './LoginForm.module.css';
 
 const LoginForm = ({ handleSubmit }) => {
   const [user, setUser] = useState({

@@ -52,5 +52,11 @@
 }
 
 .formContainer_header p {
+  margin-top: 1rem;
   font-weight: normal;
+}
+
+.formContainer input {
+  width: 90%;
+  margin: auto;
 }
