@@ -1,16 +1,20 @@
 .mainFooter {
-  height: 70px;
-  margin-top: 5rem;
+  height: 10rem;
+  margin-top: 4rem;
   padding: 1.5rem 0.4rem 5rem;
-  background: #03030381;
+  background: #b4b1b181;
   text-align: center;
-  color: rgb(235, 229, 229);
+  color: rgba(12, 12, 12, 0.911);
   font-size: 0.85rem;
   opacity: 1;
 }
 
 .mainFooter__text {
-  color: #fff;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: rgb(15, 15, 15);
   font-size: 0.85rem;
   font-weight: bold;
 }
@@ -18,7 +22,7 @@
 footer a {
   background: none;
   display: inline-block;
-  color: #fff;
+  color: rgb(7, 7, 7);
 }
 
 .mainFooter a {

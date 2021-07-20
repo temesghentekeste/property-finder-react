@@ -11,7 +11,7 @@ textarea {
 .dashboard__container {
   padding: 1rem;
   width: 90%;
-  margin-top: 5rem;
+  margin: 2rem auto;
 }
 
 .formContainer {
@@ -85,6 +85,5 @@ textarea {
   .dashboard__container {
     width: 50%;
     text-align: center;
-    margin: 5rem auto;
   }
 }

@@ -18,6 +18,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { AssignmentInd, LockOpen } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import SearchIcon from '@material-ui/icons/Search';
 import styles from './Home.module.css';
 import LoginSignUp from './LoginSignUp';
 
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    background: '#fff',
+    background: '#eee',
     color: '#444',
   },
   appBarShift: {
@@ -84,6 +85,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  searchIcon: {
+    marginLeft: 'auto',
+  },
 }));
 
 export default function Home() {
@@ -100,7 +104,9 @@ export default function Home() {
   };
 
   const reloadPage = () => {
-    const currentDocumentTimestamp = new Date(performance.timing.domLoading).getTime();
+    const currentDocumentTimestamp = new Date(
+      performance.timing.domLoading,
+    ).getTime();
     const now = Date.now();
     const tenSec = 10 * 1000;
     const plusTenSec = currentDocumentTimestamp + tenSec;
@@ -136,8 +142,9 @@ export default function Home() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              Properties Finder
+              Property Finder
             </Typography>
+            <SearchIcon className={classes.searchIcon} />
           </Toolbar>
         </AppBar>
         <Drawer
@@ -161,10 +168,18 @@ export default function Home() {
           <Divider />
           <List>
             {['Sign In', 'Sign Up'].map((text, index) => (
-              <Link to={index % 2 === 0 ? 'login' : 'signup'} key={text} className={classes.drawerH1}>
+              <Link
+                to={index % 2 === 0 ? 'login' : 'signup'}
+                key={text}
+                className={classes.drawerH1}
+              >
                 <ListItem button>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <LockOpen color="primary" /> : <AssignmentInd color="secondary" />}
+                    {index % 2 === 0 ? (
+                      <LockOpen color="primary" />
+                    ) : (
+                      <AssignmentInd color="secondary" />
+                    )}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItem>
@@ -180,7 +195,8 @@ export default function Home() {
           <div className={`${classes.drawerHeader}`} />
           <h1 className={classes.drawerH1}>Property Finder</h1>
           <p>
-            Start an amazing journey of enjoying stunning properties around the globe.
+            Start an amazing journey of enjoying stunning properties around the
+            globe.
           </p>
         </main>
       </div>

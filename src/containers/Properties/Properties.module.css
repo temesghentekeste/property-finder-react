@@ -5,7 +5,7 @@
 .properties__container {
   display: flex;
   overflow-x: auto;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 .properties__heading {
