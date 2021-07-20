@@ -8,9 +8,11 @@ import Favorites from '../../containers/Favorites';
 import Signup from '../../containers/Signup';
 import Dashboard from '../../containers/Dashboard';
 import Footer from '../Footer';
+import TopBar from '../TopBar';
 
 const Routes = () => (
   <Router>
+    <TopBar />
     <Switch>
       <Route path="/dashboard" component={Dashboard} exact />
       <Route path="/properties" component={Properties} exact />

@@ -1,0 +1,6 @@
+.topBarContainer {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(202, 199, 199);
+    padding: 1rem 2rem;
+}
