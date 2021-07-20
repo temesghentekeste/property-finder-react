@@ -1,5 +1,5 @@
 .loginSignupContainer::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -9,10 +9,9 @@
   background: url('../assets/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.2;
+  margin-top: -30rem;
 }
-
-
 
 .success,
 .error {
@@ -34,4 +33,3 @@
   color: #ec5323;
   font-weight: bold;
 }
-
