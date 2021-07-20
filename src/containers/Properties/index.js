@@ -12,7 +12,9 @@ import Sidebar from '../Sidebar';
 const Properties = () => {
   const [favoriteFlag, setFavoriteFlag] = useState(false);
   const dispatch = useDispatch();
-  const { loading, properties, error } = useSelector((state) => state.properties);
+  const { loading, properties, error } = useSelector(
+    (state) => state.properties,
+  );
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -48,21 +50,24 @@ const Properties = () => {
   }
 
   return (
-    <section className={styles.properties}>
-      <Sidebar currentPage="Properties" />
-      <div className={styles.properties__container}>
-        {properties.data.length > 0
-          && properties.data.map((property) => (
-            <PropertyItem
-              key={property.id}
-              id={property.id}
-              attributes={property.attributes}
-              handleFavorirtes={handleFavorirtes}
-              favoriteFlag={favoriteFlag}
-            />
-          ))}
-      </div>
-    </section>
+    <>
+      <section className={styles.properties}>
+        <Sidebar currentPage="Properties" />
+        <div className={styles.properties__container}>
+          {properties.data.length > 0
+            && properties.data.map((property) => (
+              <PropertyItem
+                key={property.id}
+                id={property.id}
+                attributes={property.attributes}
+                handleFavorirtes={handleFavorirtes}
+                favoriteFlag={favoriteFlag}
+              />
+            ))}
+        </div>
+      </section>
+      <p className={styles.scrollHorizontally}>Scroll Horizontally</p>
+    </>
   );
 };
 

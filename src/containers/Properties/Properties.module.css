@@ -12,9 +12,19 @@
   text-align: center;
 }
 
+.scrollHorizontally {
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
 @media (min-width: 768px) {
   .properties__container {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .scrollHorizontally {
+    display: none;
   }
 }

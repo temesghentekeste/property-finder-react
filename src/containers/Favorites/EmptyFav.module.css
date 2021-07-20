@@ -1,0 +1,18 @@
+.emptyFavContainer {
+  padding: 1rem;
+  background: #e789ac;
+}
+
+.emptyFavContainer p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.emptyFavContainer a {
+  background: #e03876;
+  line-height: 2.5;
+  cursor: pointer;
+  padding: 0.4rem;
+  font-size: 1rem;
+  color: #fff;
+}

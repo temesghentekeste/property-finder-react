@@ -2,16 +2,18 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg/lib';
 import { Redirect } from 'react-router-dom';
-import { getFavoritesAsync, createFavoriteAsync } from '../../redux/favoritesSlice';
+import {
+  getFavoritesAsync,
+  createFavoriteAsync,
+} from '../../redux/favoritesSlice';
 import FavoriteItem from '../../components/FavoriteItem';
 import styles from './favorites.module.css';
 import Sidebar from '../Sidebar';
+import EmptypFav from './EmptypFav';
 
 const Favorites = () => {
   const dispatch = useDispatch();
-  const {
-    loading, error, favorites,
-  } = useSelector((state) => state.favorites);
+  const { loading, error, favorites } = useSelector((state) => state.favorites);
 
   useEffect(() => {
     dispatch(getFavoritesAsync());
@@ -30,9 +32,7 @@ const Favorites = () => {
   }
 
   if (favorites.data.length === 0) {
-    return (
-      <h1>Currently you don&apos;t have any favorites. Please add some.</h1>
-    );
+    return <EmptypFav />;
   }
 
   let ids = [];
@@ -69,10 +69,11 @@ const Favorites = () => {
   };
 
   return (
-    <section className={styles.favorites}>
-      <Sidebar currentPage="Favorites" />
-      <div className={styles.favorites__container}>
-        {data.length > 0
+    <>
+      <section className={styles.favorites}>
+        <Sidebar currentPage="Favorites" />
+        <div className={styles.favorites__container}>
+          {data.length > 0
           && data.map((favorite) => (
             <FavoriteItem
               key={favorite.id}
@@ -87,8 +88,11 @@ const Favorites = () => {
               handleFavorirtes={handleFavorirtes}
             />
           ))}
-      </div>
-    </section>
+        </div>
+      </section>
+      <p className={styles.scrollHorizontally}>Scroll Horizontally</p>
+
+    </>
   );
 };
 
