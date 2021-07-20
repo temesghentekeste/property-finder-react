@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the LoginForm component 1`] = `
+<div
+  className="formContainer content"
+  data-testid="loginForm"
+>
+  <header
+    className="formContainer_header"
+  >
+    <h2
+      data-testid="loginForm-heading"
+    >
+      Sign In
+    </h2>
+    <p>
+      Hello there! Log in and start managing your system.
+    </p>
+  </header>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="formContainer__formInput"
+    >
+      <input
+        id="username"
+        name="username"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="formContainer__formInput"
+    >
+      <input
+        id="password"
+        name="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="formContainer__formInput"
+    >
+      <button
+        className="formContainer_btn"
+        type="submit"
+      >
+        Sign In
+      </button>
+    </div>
+  </form>
+  <div
+    className="signup"
+  >
+    <span>
+      If you are new, please, 
+    </span>
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign up
+    </a>
+  </div>
+  <div
+    className="backToHome"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Back to 
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+`;

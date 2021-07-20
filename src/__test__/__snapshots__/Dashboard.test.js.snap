@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Dashboard 1`] = `
+Array [
+  <div
+    className="sc-gzVnrw lGDtb"
+    size="default"
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "margin": "auto",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <div
+      className="sc-htoDjs sc-dnqmqq SDTxR"
+    />
+    <div
+      className="sc-htoDjs sc-iwsKbI kUYcSE"
+    />
+    <div
+      className="sc-htoDjs sc-gZMcBi eqPTXf"
+    />
+    <div
+      className="sc-htoDjs sc-gqjmRU iFOlOR"
+    />
+    <div
+      className="sc-htoDjs sc-VigVT kWPrjt"
+    />
+  </div>,
+  ",",
+]
+`;

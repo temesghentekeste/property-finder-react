@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
-import Properties from '../../containers/Properties';
-import store from '../../store';
+import Favorites from '../containers/Favorites';
+import store from '../store';
 
-const properties = [
+const favorities = [
   {
     data: [
       {
@@ -27,17 +27,19 @@ const properties = [
   },
 ];
 
-it('renders the Properties component', () => {
-    const component = renderer
-      .create(
-        <Provider store={store}>
-          <Router>
-            <Properties properties={properties} />
-          </Router>
-          ,
-        </Provider>,
-      )
-      .toJSON();
-  
-    expect(component).toMatchSnapshot();
-  });
+it('renders the Favorites component', () => {
+  localStorage.setItem('PropertyFinderUsername', 'temesghen');
+
+  const component = renderer
+    .create(
+      <Provider store={store}>
+        <Router>
+          <Favorites favorities={favorities} />
+        </Router>
+        ,
+      </Provider>,
+    )
+    .toJSON();
+
+  expect(component).toMatchSnapshot();
+});

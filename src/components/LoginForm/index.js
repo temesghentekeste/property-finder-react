@@ -23,9 +23,9 @@ const LoginForm = ({ handleSubmit }) => {
   };
 
   return (
-    <div className={`${styles.formContainer} ${styles.content}`}>
+    <div className={`${styles.formContainer} ${styles.content}`} data-testid="loginForm">
       <header className={styles.formContainer_header}>
-        <h2>Sign In</h2>
+        <h2 data-testid="loginForm-heading">Sign In</h2>
         <p>Hello there! Log in and start managing your system.</p>
       </header>
 
