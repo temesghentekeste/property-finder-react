@@ -13,7 +13,7 @@ const PropertyComponent = ({
 }) => (
   <section className={styles.propertyContainer}>
     <Sidebar currentPage={name} />
-    <div className={styles.propertyCard}>
+    <div className={styles.propertyCard} data-testid="property">
       <img src={image} alt={name} />
       <div className={styles.propertyCard__info}>
         <p>
