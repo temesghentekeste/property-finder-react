@@ -16,9 +16,9 @@ beforeEach(() => {
         price="500"
         description="Lorem ipsum"
         image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
-        isForRent={true}
+        isForRent
       />
-    </Router>
+    </Router>,
   );
   getByTestId = component.getByTestId;
 });
@@ -28,14 +28,14 @@ it('renders the property component', () => {
     .create(
       <Router>
         <Property
-        name="Test Property"
-        address="Test Address"
-        price="500"
-        description="Lorem ipsum"
-        image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
-        isForRent={true}
-      />
-      </Router>
+          name="Test Property"
+          address="Test Address"
+          price="500"
+          description="Lorem ipsum"
+          image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
+          isForRent
+        />
+      </Router>,
     )
     .toJSON();
 
@@ -43,33 +43,31 @@ it('renders the property component', () => {
 });
 
 test('should render Property component with correct name', () => {
-    const propertyEl = getByTestId('property-name');
-  
-    expect(propertyEl).toHaveTextContent('Test Property');
-  });
+  const propertyEl = getByTestId('property-name');
 
-  test('should render Property component with correct address', () => {
-    const propertyEl = getByTestId('property-address');
-  
-    expect(propertyEl).toHaveTextContent('Test Address');
-  });
+  expect(propertyEl).toHaveTextContent('Test Property');
+});
 
-  test('should render Property component with correct price', () => {
-    const propertyEl = getByTestId('property-price');
-  
-    expect(propertyEl).toHaveTextContent('500');
-  });
+test('should render Property component with correct address', () => {
+  const propertyEl = getByTestId('property-address');
 
-  test('should render Property component with correct rentable info', () => {
-    const propertyEl = getByTestId('property-rentable');
-  
-    expect(propertyEl).toHaveTextContent('Available');
-  });
+  expect(propertyEl).toHaveTextContent('Test Address');
+});
 
-  test('should render Property component with correct description', () => {
-    const propertyEl = getByTestId('property-description');
-  
-    expect(propertyEl).toHaveTextContent('Lorem');
-  });
+test('should render Property component with correct price', () => {
+  const propertyEl = getByTestId('property-price');
 
+  expect(propertyEl).toHaveTextContent('500');
+});
 
+test('should render Property component with correct rentable info', () => {
+  const propertyEl = getByTestId('property-rentable');
+
+  expect(propertyEl).toHaveTextContent('Available');
+});
+
+test('should render Property component with correct description', () => {
+  const propertyEl = getByTestId('property-description');
+
+  expect(propertyEl).toHaveTextContent('Lorem');
+});
