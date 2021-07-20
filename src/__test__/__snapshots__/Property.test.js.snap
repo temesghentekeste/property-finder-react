@@ -338,26 +338,34 @@ exports[`renders the property component 1`] = `
         </span>
         Test Property
       </p>
-      <p>
+      <p
+        data-testid="property-address"
+      >
         <span>
           Address: 
         </span>
         Test Address
       </p>
-      <p>
+      <p
+        data-testid="property-price"
+      >
         <span>
           Price: 
         </span>
         $
         500
       </p>
-      <p>
+      <p
+        data-testid="property-description"
+      >
         <span>
           Description: 
         </span>
         Lorem ipsum
       </p>
-      <p>
+      <p
+        data-testid="property-rentable"
+      >
         <span>
           Availability: 
         </span>

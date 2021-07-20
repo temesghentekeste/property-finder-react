@@ -48,4 +48,28 @@ test('should render Property component with correct name', () => {
     expect(propertyEl).toHaveTextContent('Test Property');
   });
 
+  test('should render Property component with correct address', () => {
+    const propertyEl = getByTestId('property-address');
   
+    expect(propertyEl).toHaveTextContent('Test Address');
+  });
+
+  test('should render Property component with correct price', () => {
+    const propertyEl = getByTestId('property-price');
+  
+    expect(propertyEl).toHaveTextContent('500');
+  });
+
+  test('should render Property component with correct rentable info', () => {
+    const propertyEl = getByTestId('property-rentable');
+  
+    expect(propertyEl).toHaveTextContent('Available');
+  });
+
+  test('should render Property component with correct description', () => {
+    const propertyEl = getByTestId('property-description');
+  
+    expect(propertyEl).toHaveTextContent('Lorem');
+  });
+
+

@@ -20,20 +20,20 @@ const PropertyComponent = ({
           <span>Name: </span>
           {name}
         </p>
-        <p>
+        <p data-testid="property-address">
           <span>Address: </span>
           {address}
         </p>
-        <p>
+        <p data-testid="property-price">
           <span>Price: </span>
           $
           {price}
         </p>
-        <p>
+        <p data-testid="property-description">
           <span>Description: </span>
           {description}
         </p>
-        <p>
+        <p data-testid="property-rentable">
           <span>Availability: </span>
           {isForRent ? 'Available' : 'Rented'}
         </p>
