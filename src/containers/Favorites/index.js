@@ -8,7 +8,6 @@ import {
 } from '../../redux/favoritesSlice';
 import FavoriteItem from '../../components/FavoriteItem';
 import styles from './favorites.module.css';
-import Sidebar from '../Sidebar';
 import EmptypFav from './EmptypFav';
 
 const Favorites = () => {
@@ -71,7 +70,6 @@ const Favorites = () => {
   return (
     <>
       <section className={styles.favorites}>
-        <Sidebar currentPage="Favorites" />
         <div className={styles.favorites__container}>
           {data.length > 0
           && data.map((favorite) => (

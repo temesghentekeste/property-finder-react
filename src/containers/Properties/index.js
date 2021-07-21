@@ -7,7 +7,6 @@ import styles from './Properties.module.css';
 import { getPropertiesAsync } from '../../redux/propertiesSlice';
 import { createFavoriteAsync } from '../../redux/favoritesSlice';
 import PropertyItem from '../../components/PropertyItem';
-import Sidebar from '../Sidebar';
 
 const Properties = () => {
   const [favoriteFlag, setFavoriteFlag] = useState(false);
@@ -52,7 +51,6 @@ const Properties = () => {
   return (
     <>
       <section className={styles.properties}>
-        <Sidebar currentPage="Properties" />
         <div className={styles.properties__container}>
           {properties.data.length > 0
             && properties.data.map((property) => (

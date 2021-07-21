@@ -9,10 +9,12 @@ import Signup from '../../containers/Signup';
 import Dashboard from '../../containers/Dashboard';
 import Footer from '../Footer';
 import TopBar from '../TopBar';
+import Sidebar from '../../containers/Sidebar';
 
 const Routes = () => (
   <Router>
     <TopBar />
+    <Sidebar />
     <Switch>
       <Route path="/dashboard" component={Dashboard} exact />
       <Route path="/properties" component={Properties} exact />

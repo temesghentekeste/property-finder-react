@@ -5,7 +5,6 @@ import { WaveLoading } from 'react-loadingg';
 import { getUserDashboard } from '../../redux/dashboardSlice';
 import DashboardComp from '../../components/DashboardComp';
 import CreateProperty from './CreateProperty';
-import Sidebar from '../Sidebar';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -35,7 +34,6 @@ const Dashboard = () => {
 
   return (
     <section>
-      <Sidebar currentPage="Dashboard" />
       <CreateProperty />
       {user.included.length > 0 && <DashboardComp data={user.included} />}
     </section>

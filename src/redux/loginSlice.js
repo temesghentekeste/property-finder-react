@@ -10,6 +10,8 @@ const initialState = {
   loading: false,
   login: false,
   user: {},
+  token: localStorage.getItem('PropertyFinderToken'),
+  username: localStorage.getItem('PropertyFinderUername'),
   error: '',
 };
 
@@ -39,6 +41,8 @@ const loginSlice = createSlice({
       state.login = false;
       state.user = {};
       state.error = '';
+      state.token = localStorage.getItem('PropertyFinderToken');
+      state.username = localStorage.getItem('PropertyFinderUername');
     },
     [getUserTokenInfo.fulfilled]: (state, action) => {
       state.loading = false;
@@ -47,6 +51,8 @@ const loginSlice = createSlice({
         username: action.payload.username,
         token: action.payload.token,
       };
+      state.token = action.payload.token;
+      state.username = action.payload.username;
       localStorage.setItem('PropertyFinderToken', action.payload.token);
       localStorage.setItem('PropertyFinderUsername', action.payload.username);
       state.error = '';
@@ -55,6 +61,8 @@ const loginSlice = createSlice({
       state.loading = false;
       state.login = false;
       state.user = {};
+      state.token = null;
+      state.username = null;
       localStorage.removeItem('PropertyFinderToken');
       localStorage.removeItem('PropertyFinderUsername');
       state.error = 'Incorrect username or password.';

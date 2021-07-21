@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
-import Sidebar from '../../containers/Sidebar';
 import styles from './Property.module.css';
 
 const PropertyComponent = ({
@@ -12,7 +11,6 @@ const PropertyComponent = ({
   isForRent,
 }) => (
   <section className={styles.propertyContainer}>
-    <Sidebar currentPage={name} />
     <div className={styles.propertyCard} data-testid="property">
       <img src={image} alt={name} />
       <div className={styles.propertyCard__info}>
