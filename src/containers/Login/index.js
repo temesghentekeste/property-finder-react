@@ -27,6 +27,7 @@ const Login = () => {
     setShowMessage(false);
   }, []);
 
+  const lsLogged = localStorage.getItem('PropertyFinderToken') !== 'null';
   return (
     <div className={common.loginSignupContainer}>
       {showMessage && error && (
@@ -35,7 +36,7 @@ const Login = () => {
         </div>
       )}
       {loading && <WaveLoading />}
-      {user && user.username && user.token && <Redirect to="/properties" />}
+      {user && user.username && user.token && lsLogged && <Redirect to="/properties" />}
       <LoginForm handleSubmit={handleSubmit} />
     </div>
   );

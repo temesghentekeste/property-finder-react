@@ -102,7 +102,6 @@ export default function Sidebar() {
   };
 
   const { username, token } = useSelector((state) => state.usernametoken);
-  console.log(username, token, window.location.pathname);
 
   let menuData = username ? data : dataNotSignedIn;
   const currentPage = window.location.pathname;
@@ -111,9 +110,6 @@ export default function Sidebar() {
     || currentPage === '/signup'
     || currentPage === '/login'
   ) {
-    console.log('Home page');
-    window.location.reload();
-    window.stop();
     menuData = dataNotSignedIn;
   }
 
