@@ -1,8 +1,8 @@
-p {
-  color: rgb(94, 65, 65);
-  font-weight: bold;
-  opacity: 1;
-  font-size: 1.1rem;
+.homeContainer {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .homeContainer::before {
@@ -45,6 +45,17 @@ p {
   color: #fff;
   padding: 6px 8px;
   border-radius: 5px;
+}
+
+.homeContainer__welcome h1 {
+  font-weight: bold;
+  color: #272a2b;
+}
+
+.homeContainer__welcome p {
+  padding: 0.45rem;
+  font-size: 1rem;
+  color: #272a2b;
 }
 
 .loginSignup a:last-child {

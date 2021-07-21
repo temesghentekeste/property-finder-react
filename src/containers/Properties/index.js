@@ -51,6 +51,7 @@ const Properties = () => {
   return (
     <>
       <section className={styles.properties}>
+        <h1>All Properties</h1>
         <div className={styles.properties__container}>
           {properties.data.length > 0
             && properties.data.map((property) => (

@@ -1,8 +1,9 @@
 .mainFooter {
-  height: 10rem;
-  margin-top: 4rem;
+  height: 40vh;
+  margin-top: auto;
+  align-self: flex-end;
   padding: 1.5rem 0.4rem 5rem;
-  background: #b4b1b181;
+  background: #9e9a9a81;
   text-align: center;
   color: rgba(12, 12, 12, 0.911);
   font-size: 0.85rem;

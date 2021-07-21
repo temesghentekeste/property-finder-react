@@ -18,7 +18,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import data from './data';
 import dataNotSignedIn from './data_not_signedin';
 import './sidebar.css';
@@ -104,13 +104,16 @@ export default function Sidebar() {
   const { username, token } = useSelector((state) => state.usernametoken);
 
   let menuData = username ? data : dataNotSignedIn;
+  const location = useLocation();
   const currentPage = window.location.pathname;
   if (
-    currentPage === '/'
+    (currentPage === '/'
     || currentPage === '/signup'
-    || currentPage === '/login'
+    || currentPage === '/login') && localStorage.getItem('PropertyFinderToken') === 'null'
   ) {
     menuData = dataNotSignedIn;
+  } else {
+    menuData = data;
   }
 
   return (

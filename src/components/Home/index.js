@@ -15,10 +15,8 @@ export default function Home() {
       location.reload();
     }
   };
-  // reloadPage();
 
   if (!localStorage.getItem('PropertyFinderUsername')) {
-    console.log('Logged out');
     reloadPage();
   }
 
@@ -29,7 +27,11 @@ export default function Home() {
 
   return (
     <div className={styles.homeContainer}>
-      <LoginSignUp />
+      <div className={styles.homeContainer__welcome}>
+        <h1>Property Finder.</h1>
+        <p>Enjoy the adventure of discovering stunning properties around the globe!</p>
+        <LoginSignUp />
+      </div>
     </div>
   );
 }

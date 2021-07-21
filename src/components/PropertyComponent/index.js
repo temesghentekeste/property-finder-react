@@ -11,6 +11,10 @@ const PropertyComponent = ({
   isForRent,
 }) => (
   <section className={styles.propertyContainer}>
+    <h1>
+      About&nbsp;
+      { name }
+    </h1>
     <div className={styles.propertyCard} data-testid="property">
       <img src={image} alt={name} />
       <div className={styles.propertyCard__info}>

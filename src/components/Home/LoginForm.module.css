@@ -8,6 +8,7 @@
 }
 
 .signinSignupContainer {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +33,7 @@
 .signin a {
   color: #fff;
 }
+
 
 @media (min-width: 768px) {
   .signinSignupContainer {

@@ -1,5 +1,6 @@
 .properties {
   margin: 1rem;
+  margin-top: 7rem;
 }
 
 .properties__container {
@@ -16,6 +17,12 @@
   text-align: center;
   font-weight: bold;
   color: #444;
+}
+
+.properties h1 {
+  text-align: center;
+  color: rgb(99, 95, 95);
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {

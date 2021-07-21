@@ -70,6 +70,7 @@ const Favorites = () => {
   return (
     <>
       <section className={styles.favorites}>
+        <h1>Your Favorites</h1>
         <div className={styles.favorites__container}>
           {data.length > 0
           && data.map((favorite) => (
