@@ -17,7 +17,7 @@ export const getUserDashboard = createAsyncThunk(
   async () => {
     await axiosDefaults();
     await axiosHeders();
-    const response = await axios.get('/dashboard');
+    const response = await axios.get(`/users/${localStorage.getItem('PropertyFinderUserId')}`);
     const user = await response.data;
     return user;
   },

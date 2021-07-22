@@ -19,7 +19,7 @@ const data = [
 
   {
     link: 'Dashboard',
-    url: 'dashboard',
+    url: `dashboard/${localStorage.getItem('PropertyFinderUsername')}`,
     icon: <ViewListIcon color="primary" />,
   },
 

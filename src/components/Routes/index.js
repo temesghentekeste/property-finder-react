@@ -14,7 +14,7 @@ const Routes = () => (
   <Router>
     <Sidebar />
     <Switch>
-      <Route path="/dashboard" component={Dashboard} exact />
+      <Route path="/dashboard/:username" component={Dashboard} exact />
       <Route path="/properties" component={Properties} exact />
       <Route path="/favorites" component={Favorites} />
       <Route path="/properties/:id" component={Property} exact />
