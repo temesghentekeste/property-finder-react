@@ -1,6 +1,6 @@
 # Propery Finder
 
-This is the final project that is part of the fulfillment of the Microverse main curriculum section. It is SPA that fetches and renders resources from an API endpoint created using Ruby on Rails which is part of the overall requirements of the final project.
+This is the final project that is part of the fulfillment of the Microverse main curriculum section. It is SPA that fetches and renders resources from an API endpoint created using Ruby on Rails which is part of the overall requirements of the final project. The repo for the back-end app can be accessed [here](https://github.com/temesghentekeste/proprty-finder-api)
 
 The site allows users to create an account, view available properties, add a property to a favorites list, and create a new property. Detailed info of a particular property is shown when a particular property card is clicked. In addition, logged-in user's properties are rendered in the dashboard section of the project. The site is responsive and it works in all screen readers.
 
@@ -59,9 +59,7 @@ The site allows users to create an account, view available properties, add a pro
 
 ## Screenshots <a name = "sc"></a>
 
-
 ![screenshot](./public/screenshots/screenshot.gif)
-
 
 ## Getting Started <a name = "gs"></a>
 
