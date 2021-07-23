@@ -5,7 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import styles from './Signup.module.css';
 import common from '../../common/common.module.css';
 
-const SignupForm = ({ handleSubmit }) => {
+const SignupForm = ({ handleSubmit, errorMessage = '', successMessage = '' }) => {
   const [user, setUser] = useState({
     username: '',
     password: '',
@@ -18,6 +18,8 @@ const SignupForm = ({ handleSubmit }) => {
     setUser({ ...user, [name]: value });
   };
 
+  console.log('********', errorMessage, successMessage);
+
   useEffect(() => {
     usernameRef.current.focus();
   }, []);
@@ -27,6 +29,9 @@ const SignupForm = ({ handleSubmit }) => {
       className={`${styles.formContainer} ${styles.content}`}
       data-testid="SignupForm"
     >
+      {errorMessage && <h1 className={common.error}>{errorMessage}</h1>}
+      {successMessage && <h1 className={common.success}>{successMessage}</h1>}
+
       <header className={styles.formContainer_header}>
         <h2 data-testid="SignupForm-heading">Sign Up</h2>
         <p>Hello there! Sign up and enjoy wonderful properies.</p>
@@ -40,6 +45,7 @@ const SignupForm = ({ handleSubmit }) => {
             value={user.username}
             onChange={handleChange}
             ref={usernameRef}
+            required
           />
         </div>
         <div className={styles.formContainer__formInput}>
@@ -49,6 +55,7 @@ const SignupForm = ({ handleSubmit }) => {
             name="password"
             value={user.password}
             onChange={handleChange}
+            required
           />
         </div>
         <div className={styles.formContainer__formInput}>
@@ -73,6 +80,8 @@ const SignupForm = ({ handleSubmit }) => {
 
 SignupForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string.isRequired,
+  successMessage: PropTypes.string.isRequired,
 };
 
 export default SignupForm;

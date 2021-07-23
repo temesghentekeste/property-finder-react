@@ -25,19 +25,16 @@ const Login = () => {
 
   useEffect(() => {
     setShowMessage(false);
+    console.log(showMessage);
   }, []);
 
   const lsLogged = localStorage.getItem('PropertyFinderToken') !== 'null';
+
   return (
     <div className={common.loginSignupContainer}>
-      {showMessage && error && (
-        <div className={common.error}>
-          Incorrect username or password. Please try again!.
-        </div>
-      )}
       {loading && <WaveLoading />}
       {user && user.username && user.token && lsLogged && <Redirect to="/properties" />}
-      <LoginForm handleSubmit={handleSubmit} />
+      <LoginForm handleSubmit={handleSubmit} errorMessage={showMessage ? error : ''} />
     </div>
   );
 };

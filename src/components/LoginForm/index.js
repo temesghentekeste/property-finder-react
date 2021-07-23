@@ -5,7 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import common from '../../common/common.module.css';
 import styles from './LoginForm.module.css';
 
-const LoginForm = ({ handleSubmit }) => {
+const LoginForm = ({ handleSubmit, errorMessage = '' }) => {
   const [user, setUser] = useState({
     username: '',
     password: '',
@@ -24,6 +24,7 @@ const LoginForm = ({ handleSubmit }) => {
 
   return (
     <div className={`${styles.formContainer} ${styles.content}`} data-testid="loginForm">
+      {errorMessage && <h1 className={common.error}>{errorMessage}</h1>}
       <header className={styles.formContainer_header}>
         <h2 data-testid="loginForm-heading">Sign In</h2>
         <p>Hello there! Log in and start managing your system.</p>
@@ -71,6 +72,7 @@ const LoginForm = ({ handleSubmit }) => {
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string.isRequired,
 };
 
 export default LoginForm;

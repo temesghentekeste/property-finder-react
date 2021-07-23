@@ -15,14 +15,17 @@
 
 .success,
 .error {
-  padding: 0.5rem;
+  width: 80%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
   background: rgb(94, 140, 226);
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  text-align-last: left;
 }
 
 .error {
-  background: rgb(158, 14, 9);
+  background: rgb(228, 75, 70);
 }
 
 .backToHome a {
@@ -32,4 +35,11 @@
   align-items: center;
   color: #ec5323;
   font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .success,
+  .error {
+    width: 30%;
+  }
 }

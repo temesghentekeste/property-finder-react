@@ -12,7 +12,7 @@ const Signup = () => {
 
   const { signup, loading } = useSelector((state) => state.signupuser);
 
-  const { error, user } = useSelector((state) => state.signupuser);
+  const { error, user, message } = useSelector((state) => state.signupuser);
 
   const [showMessage, setShowMessage] = useState(false);
 
@@ -23,27 +23,25 @@ const Signup = () => {
     setShowMessage(true);
   };
 
+  console.log(error, message, showMessage, user);
+
   useEffect(() => {
     setShowMessage(false);
+    console.log(showMessage);
     localStorage.setItem('PropertyFinderUsername', null);
     localStorage.setItem('PropertyFinderToken', null);
   }, []);
 
   return (
     <div className={common.loginSignupContainer}>
-      {showMessage && error && (
-      <div className={common.error}>
-        Username and password are required, or try a different username.
-      </div>
-      )}
-      {showMessage && user && user.data && (
-      <div className={common.success}>
-        Account created successfully! Sign in to proceed.
-      </div>
-      )}
+
       {showMessage && loading && <WaveLoading />}
 
-      <SignupForm handleSubmit={handleSubmit} />
+      <SignupForm
+        handleSubmit={handleSubmit}
+        successMessage={showMessage && message ? message : ''}
+        errorMessage={showMessage && error ? error : ''}
+      />
     </div>
   );
 };
