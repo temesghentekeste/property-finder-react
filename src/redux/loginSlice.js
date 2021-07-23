@@ -2,8 +2,8 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { generateTokenURL } from '../api/apiEndPoints';
-import { axiosDefaults } from '../api/axiosParams';
+import { generateTokenURL } from './api/apiEndPoints';
+import { axiosDefaults } from './api/axiosParams';
 
 axiosDefaults();
 const initialState = {

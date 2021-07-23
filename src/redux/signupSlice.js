@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
-import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { axiosDefaults } from '../api/axiosParams';
 
-axiosDefaults();
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+import { signupUser } from './api/apiActions';
+
 const initialState = {
   loading: false,
   signup: false,
@@ -12,21 +12,6 @@ const initialState = {
   user: null,
   error: '',
 };
-
-export const signupUser = createAsyncThunk('users/signupUser', async (user) => {
-  await axiosDefaults();
-  const data = {
-    user,
-  };
-  const headers = {
-    'Content-Type': 'application/json',
-  };
-  const response = await axios.post('/users', data, {
-    headers,
-  });
-  const userInfo = await response.data;
-  return userInfo;
-});
 
 const signupSlice = createSlice({
   name: 'usersignup',

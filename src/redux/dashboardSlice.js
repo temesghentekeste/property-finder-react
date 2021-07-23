@@ -2,7 +2,7 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { axiosDefaults, axiosHeders } from '../api/axiosParams';
+import { axiosDefaults, axiosHeders } from './api/axiosParams';
 
 const initialState = {
   loading: false,
@@ -17,7 +17,9 @@ export const getUserDashboard = createAsyncThunk(
   async () => {
     await axiosDefaults();
     await axiosHeders();
-    const response = await axios.get(`/users/${localStorage.getItem('PropertyFinderUserId')}`);
+    const response = await axios.get(
+      `/users/${localStorage.getItem('PropertyFinderUserId')}`,
+    );
     const user = await response.data;
     return user;
   },

@@ -2,8 +2,8 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { allPropertiesURL } from '../api/apiEndPoints';
-import { axiosDefaults, axiosHeders } from '../api/axiosParams';
+import { allPropertiesURL } from './api/apiEndPoints';
+import { axiosDefaults, axiosHeders } from './api/axiosParams';
 
 const initialState = {
   loading: false,
