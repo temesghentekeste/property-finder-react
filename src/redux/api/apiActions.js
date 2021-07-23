@@ -6,8 +6,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { allPropertiesURL, generateTokenURL } from './apiEndPoints';
 
 const axiosDefaults = () => {
-  // axios.defaults.baseURL = 'https://api-temesghen-property.herokuapp.com/api/v1';
-  axios.defaults.baseURL = 'http://localhost:3000/api/v1';
+  axios.defaults.baseURL = 'https://api-temesghen-property.herokuapp.com/api/v1';
+//   axios.defaults.baseURL = 'http://localhost:3000/api/v1';
 };
 
 const axiosHeders = () => {
