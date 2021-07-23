@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { WaveLoading } from 'react-loadingg';
 
-import { getUserDashboard } from '../../redux/dashboardSlice';
+import { getUserDashboard } from '../../redux/api/apiActions';
 import DashboardComp from '../../components/DashboardComp';
 import CreateProperty from './CreateProperty';
 

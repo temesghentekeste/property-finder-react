@@ -1,25 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
-import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { axiosDefaults, axiosHeders } from './api/axiosParams';
+import { createSlice } from '@reduxjs/toolkit';
+import { getPropertyAsync } from './api/apiActions';
 
 const initialState = {
   loading: false,
   property: null,
   error: null,
 };
-
-export const getPropertyAsync = createAsyncThunk(
-  'properties/getPropertiesAsync',
-  async (id) => {
-    await axiosDefaults();
-    await axiosHeders();
-    const response = await axios.get(`/properties/${id}`);
-    const property = await response.data;
-    return property;
-  },
-);
 
 const propertySlice = createSlice({
   name: 'property',

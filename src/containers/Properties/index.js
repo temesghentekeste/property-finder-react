@@ -4,8 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { WaveLoading } from 'react-loadingg';
 import styles from './Properties.module.css';
 
-import { getPropertiesAsync } from '../../redux/propertiesSlice';
-import { createFavoriteAsync } from '../../redux/favoritesSlice';
+import { getPropertiesAsync, createFavoriteAsync } from '../../redux/api/apiActions';
+
 import PropertyItem from '../../components/PropertyItem';
 
 const Properties = () => {

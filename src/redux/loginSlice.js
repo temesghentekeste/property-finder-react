@@ -1,11 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
-import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { generateTokenURL } from './api/apiEndPoints';
-import { axiosDefaults } from './api/axiosParams';
+import { createSlice } from '@reduxjs/toolkit';
+import { getUserTokenInfo } from './api/apiActions';
 
-axiosDefaults();
 const initialState = {
   loading: false,
   login: false,
@@ -15,23 +12,6 @@ const initialState = {
   userId: localStorage.getItem('PropertyFinderUserId'),
   error: '',
 };
-
-export const getUserTokenInfo = createAsyncThunk(
-  'properties/getUserTokenInfo',
-  async (user) => {
-    const data = {
-      user,
-    };
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-    const response = await axios.post(generateTokenURL, data, {
-      headers,
-    });
-    const userInfo = await response.data;
-    return userInfo;
-  },
-);
 
 const loginSlice = createSlice({
   name: 'usernametoken',

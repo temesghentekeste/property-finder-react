@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   createNewProperty,
   getUserDashboard,
-} from '../../../redux/dashboardSlice';
+} from '../../../redux/api/apiActions';
 import CreatePropertyForm from '../../../components/DashboardComp/CreatePropertyForm';
 import styles from './CreateProperty.module.css';
 

@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { axiosDefaults, axiosHeders } from './api/axiosParams';
+import { getUserDashboard, createNewProperty } from './api/apiActions';
 
 const initialState = {
   loading: false,
@@ -11,36 +12,6 @@ const initialState = {
   error: '',
   created: false,
 };
-
-export const getUserDashboard = createAsyncThunk(
-  'users/getUserDashboard',
-  async () => {
-    await axiosDefaults();
-    await axiosHeders();
-    const response = await axios.get(
-      `/users/${localStorage.getItem('PropertyFinderUserId')}`,
-    );
-    const user = await response.data;
-    return user;
-  },
-);
-
-export const createNewProperty = createAsyncThunk(
-  'propperies/createNewProperty',
-  async (newProperty) => {
-    const data = newProperty;
-    await axiosDefaults();
-    await axiosHeders();
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-    const response = await axios.post('/properties', data, {
-      headers,
-    });
-    const property = await response.data;
-    return property;
-  },
-);
 
 const dashboardSlice = createSlice({
   name: 'userdashboard',

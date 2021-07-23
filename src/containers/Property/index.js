@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg/lib';
-import { getPropertyAsync } from '../../redux/propertySlice';
+import { getPropertyAsync } from '../../redux/api/apiActions';
 import PropertyComponent from '../../components/PropertyComponent';
 
 const Property = () => {

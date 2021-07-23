@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/require-default-props */
 import PropTypes from 'prop-types';
 import styles from './Property.module.css';
 
 const PropertyComponent = ({
-  name,
-  address,
-  price,
-  description,
-  image,
-  isForRent,
+  name = '',
+  address = '',
+  price = '',
+  description = '',
+  image = '',
+  isForRent = false,
 }) => (
   <section className={styles.propertyContainer}>
     <h1>
@@ -45,12 +46,12 @@ const PropertyComponent = ({
 );
 
 PropertyComponent.propTypes = {
-  name: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  isForRent: PropTypes.bool.isRequired,
+  name: PropTypes.string,
+  address: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.string,
+  image: PropTypes.string,
+  isForRent: PropTypes.bool,
 };
 
 export default PropertyComponent;

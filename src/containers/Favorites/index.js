@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import {
   getFavoritesAsync,
   createFavoriteAsync,
-} from '../../redux/favoritesSlice';
+} from '../../redux/api/apiActions';
 import FavoriteItem from '../../components/FavoriteItem';
 import styles from './favorites.module.css';
 import EmptypFav from './EmptypFav';

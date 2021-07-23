@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
-import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { axiosDefaults, axiosHeders } from './api/axiosParams';
+import { createSlice } from '@reduxjs/toolkit';
+import { createFavoriteAsync, getFavoritesAsync } from './api/apiActions';
 
 const initialState = {
   loading: false,
@@ -10,36 +9,6 @@ const initialState = {
   message: '',
   error: '',
 };
-
-export const getFavoritesAsync = createAsyncThunk(
-  'favorites/getFavoritesAsync',
-  async () => {
-    await axiosDefaults();
-    await axiosHeders();
-    const response = await axios.get('/favorites');
-    const favorites = await response.data;
-    return favorites;
-  },
-);
-
-export const createFavoriteAsync = createAsyncThunk(
-  'favorites/createFavoriteAsync',
-  async (propertyId) => {
-    await axiosDefaults();
-    await axiosHeders();
-    const data = {
-      property_id: propertyId,
-    };
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-    const response = await axios.post('/favorites', data, {
-      headers,
-    });
-    const message = await response.data;
-    return message;
-  },
-);
 
 const favoritesSlice = createSlice({
   name: 'favorites',

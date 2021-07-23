@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import WaveLoading from 'react-loadingg/lib/WaveLoading';
 import { Redirect } from 'react-router-dom';
-import { getUserTokenInfo } from '../../redux/loginSlice';
+import { getUserTokenInfo } from '../../redux/api/apiActions';
 import LoginForm from '../../components/LoginForm';
 import common from '../../common/common.module.css';
 
