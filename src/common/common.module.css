@@ -15,17 +15,18 @@
 
 .success,
 .error {
-  width: 80%;
+  width: 90%;
   margin-bottom: 1rem;
   padding: 0.7rem;
-  background: rgb(94, 140, 226);
+  background: rgb(23, 100, 4);
   color: white;
   font-size: 1rem;
-  text-align-last: left;
+  text-align: left;
+  opacity: 0.5;
 }
 
 .error {
-  background: rgb(228, 75, 70);
+  background: rgb(235, 14, 6);
 }
 
 .backToHome a {

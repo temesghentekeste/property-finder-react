@@ -25,7 +25,6 @@ const Login = () => {
 
   useEffect(() => {
     setShowMessage(false);
-    console.log(showMessage);
   }, []);
 
   const lsLogged = localStorage.getItem('PropertyFinderToken') !== 'null';

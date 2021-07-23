@@ -23,11 +23,8 @@ const Signup = () => {
     setShowMessage(true);
   };
 
-  console.log(error, message, showMessage, user);
-
   useEffect(() => {
     setShowMessage(false);
-    console.log(showMessage);
     localStorage.setItem('PropertyFinderUsername', null);
     localStorage.setItem('PropertyFinderToken', null);
   }, []);

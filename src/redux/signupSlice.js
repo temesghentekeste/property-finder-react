@@ -2,7 +2,6 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { generateTokenURL } from '../api/apiEndPoints';
 import { axiosDefaults } from '../api/axiosParams';
 
 axiosDefaults();
@@ -15,8 +14,7 @@ const initialState = {
 };
 
 export const signupUser = createAsyncThunk('users/signupUser', async (user) => {
-  // await axiosDefaults();
-  axios.defaults.baseURL = 'http://localhost:3000/api/v1';
+  await axiosDefaults();
   const data = {
     user,
   };
@@ -27,8 +25,6 @@ export const signupUser = createAsyncThunk('users/signupUser', async (user) => {
     headers,
   });
   const userInfo = await response.data;
-  console.log('*********', userInfo);
-  console.log('Executed');
   return userInfo;
 });
 
@@ -37,8 +33,6 @@ const signupSlice = createSlice({
   initialState,
   extraReducers: {
     [signupUser.pending]: (state, action) => {
-      console.log('*********', 'peinding');
-
       state.loading = true;
       state.signup = false;
       state.user = null;
@@ -46,7 +40,6 @@ const signupSlice = createSlice({
       state.error = '';
     },
     [signupUser.fulfilled]: (state, action) => {
-      console.log('*********', 'fulfilled');
       state.loading = false;
       state.signup = true;
       state.user = action.payload.user;
@@ -55,11 +48,10 @@ const signupSlice = createSlice({
     },
     [signupUser.rejected]: (state, action) => {
       state.loading = false;
-      console.log('*********', 'rejected');
       state.signup = false;
       state.user = null;
       state.message = '';
-      state.error = action.payload;
+      state.error = 'Username & password are required; or try a diffrent username!';
     },
   },
 });

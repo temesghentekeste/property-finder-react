@@ -18,8 +18,6 @@ const SignupForm = ({ handleSubmit, errorMessage = '', successMessage = '' }) =>
     setUser({ ...user, [name]: value });
   };
 
-  console.log('********', errorMessage, successMessage);
-
   useEffect(() => {
     usernameRef.current.focus();
   }, []);
@@ -30,7 +28,17 @@ const SignupForm = ({ handleSubmit, errorMessage = '', successMessage = '' }) =>
       data-testid="SignupForm"
     >
       {errorMessage && <h1 className={common.error}>{errorMessage}</h1>}
-      {successMessage && <h1 className={common.success}>{successMessage}</h1>}
+      {
+        successMessage && (
+        <div className={common.success}>
+          {successMessage}
+&nbsp; Click&nbsp;
+          <Link to="/login" className={styles.formContainer__signIn}>here</Link>
+          {' '}
+          to sign in.
+        </div>
+        )
+      }
 
       <header className={styles.formContainer_header}>
         <h2 data-testid="SignupForm-heading">Sign Up</h2>
