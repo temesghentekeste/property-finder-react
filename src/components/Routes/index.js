@@ -1,5 +1,7 @@
 /* eslint-disable comma-dangle */
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Switch, Route, Redirect
+} from 'react-router-dom';
 import Login from '../../containers/Login';
 import Property from '../../containers/Property';
 import Properties from '../../containers/Properties';
@@ -21,6 +23,7 @@ const Routes = () => (
       <Route path="/login" component={Login} exact />
       <Route path="/signup" component={Signup} exact />
       <Route path="/" exact component={App} />
+      <Route path="*" render={() => <Redirect to="/" />} />
     </Switch>
     <Footer />
   </Router>
