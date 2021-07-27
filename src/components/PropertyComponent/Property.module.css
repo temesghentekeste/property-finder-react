@@ -1,0 +1,40 @@
+.propertyContainer img {
+  width: 100%;
+}
+
+.propertyContainer p {
+  margin-top: 0.58rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted #444;
+}
+
+.propertyContainer {
+  padding: 1rem;
+  margin: 7rem auto;
+  width: 100%;
+}
+
+.propertyCard {
+  margin: 1rem;
+}
+
+.propertyCard__info {
+  color: #444;
+  background: white;
+}
+
+.propertyContainer h1 {
+  text-align: center;
+  color: rgb(99, 95, 95);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .propertyContainer {
+    width: 70%;
+  }
+
+  .propertyContainer img {
+    width: 60%;
+  }
+}

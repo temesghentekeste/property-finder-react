@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Propery Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the final project that is part of the fulfillment of the Microverse main curriculum section. It is SPA that fetches and renders resources from an API endpoint created using Ruby on Rails which is part of the overall requirements of the final project. The repo for the back-end app can be accessed [here](https://github.com/temesghentekeste/proprty-finder-api)
 
-## Available Scripts
+The site allows users to create an account, view available properties, add a property to a favorites list, and create a new property. Detailed info of a particular property is shown when a particular property card is clicked. In addition, logged-in user's properties are rendered in the dashboard section of the project. The site is responsive and it works in all screen readers.
 
-In the project directory, you can run:
+<div align="center">
 
-### `yarn start`
+[![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/temesghentekeste/property-finder-react)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/temesghentekeste/property-finder-react/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/temesghentekeste/property-finder-react/pulls)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📝 Content
 
-### `yarn test`
+<p align="center">
+<a href="#with">Built with</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#live">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#start">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#test">Test</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#sc">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#author">Author</a>
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧 Built with<a name = "with"></a>
 
-### `yarn build`
+- [ ] Node.js
+- [ ] React
+- [ ] React-DOM
+- [ ] React-Create-App
+- [ ] Redux Tool Kit (RTK)
+- [ ] React-Redux
+- [ ] Axios
+- [ ] Material UI
+- [ ] Prop-Types
+- [ ] ESLint
+- [ ] StyleLint
+- [ ] Heroku
+- [ ] npm
+- [ ] CSS
+- [ ] ES6
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :heavy_check_mark: Getting Started <a name = "start"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [ ] git clone [https://github.com/temesghentekeste/property-finder-react](https://github.com/temesghentekeste/property-finder-react/tree/develop)
+- [ ] cd property-finder-react
+- [ ] npm install
+- [ ] npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :eyes: Run Tests <a name = "test"></a>
 
-### `yarn eject`
+- [ ] cd property-finder-react
+- [ ] npm run test
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🔴 Live Demo <a name = "live"></a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+\*Click [here](https://property-finder-temesghen.herokuapp.com/) in order to see a Live Demo of this project.\*\*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Screenshots <a name = "sc"></a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![screenshot](./public/screenshots/screenshot.gif)
 
-## Learn More
+## Getting Started <a name = "gs"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To get a local copy of the repository please run the following commands on your terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ git clone git@github.com:temesghentekeste/property-finder-react.git
+$ cd property-finder-react
+```
 
-### Code Splitting
+## Author <a name = "author"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Temesghen Tekeste**
 
-### Analyzing the Bundle Size
+- Github: [@temesghentekeste](https://github.com/temesghentekeste)
+- Twitter: [@temesghentekes1](https://twitter.com/temesghentekes1)
+- Linkedin: [temsghen-tekeste](https://www.linkedin.com/in/temesghentekeste/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](https://github.com/temesghentekeste/property-finder-react/issues).
 
-### Advanced Configuration
+## 👍 Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if you like this project!
 
-### Deployment
+## :clap: Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Coingecko: [@coingecko](https://www.coingecko.com/en/api)
+- Stack Overflow: [@stackoverflow](https://stackoverflow.com/)
+- Microverse: [@microverse](https://www.microverse.org/)
 
-### `yarn build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

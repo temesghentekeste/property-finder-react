@@ -1,0 +1,63 @@
+.dashboard {
+  margin: 1rem;
+}
+
+.dashboard__table__head {
+  margin-bottom: 1rem;
+}
+
+.dashboard__name {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard h4 {
+  color: #ec5323;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.dashboard span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgb(161, 87, 184);
+}
+
+.dashboard th {
+  font-weight: 700;
+  background: rgb(97, 95, 95);
+  color: #fff;
+}
+
+.dashboard__actions {
+  display: flex;
+
+  /* flex-direction: column; */
+}
+
+.dashboard_actions button {
+  margin-bottom: 0.2rem;
+  margin-right: 0.2rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.dashboard__actions__btnEdit {
+  background: #2e5594;
+}
+
+.dashboard__actions__btnDelete {
+  background: #ec5323;
+}
+
+.dashboard__actions__btnDeleteFav {
+  background: #ca1313;
+}
+
+.dashboard__actions__btnAddFav {
+  background: #13caca;
+}

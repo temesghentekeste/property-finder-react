@@ -1,0 +1,37 @@
+.properties {
+  margin: 1rem;
+  margin-top: 7rem;
+}
+
+.properties__container {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.properties__heading {
+  text-align: center;
+}
+
+.scrollHorizontally {
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+.properties h1 {
+  text-align: center;
+  color: rgb(99, 95, 95);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .properties__container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .scrollHorizontally {
+    display: none;
+  }
+}

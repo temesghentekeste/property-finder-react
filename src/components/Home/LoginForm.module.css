@@ -1,0 +1,47 @@
+:root {
+  --primary-color: #ec5323;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.signinSignupContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup,
+.signin {
+  width: 90%;
+  background-color: #ec5323;
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-bottom: 1rem;
+}
+
+.signin {
+  background: #09546b;
+}
+
+.signup a,
+.signin a {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .signinSignupContainer {
+    flex-direction: row;
+  }
+
+  .signup,
+  .signin {
+    width: 100px;
+    margin-right: 1rem;
+  }
+}

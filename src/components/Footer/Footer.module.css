@@ -1,0 +1,31 @@
+.mainFooter {
+  height: 40vh;
+  margin-top: auto;
+  align-self: flex-end;
+  padding: 1.5rem 0.4rem 5rem;
+  background: #9e9a9a81;
+  text-align: center;
+  color: rgba(12, 12, 12, 0.911);
+  font-size: 0.85rem;
+  opacity: 1;
+}
+
+.mainFooter__text {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: rgb(15, 15, 15);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+footer a {
+  background: none;
+  display: inline-block;
+  color: rgb(7, 7, 7);
+}
+
+.mainFooter a {
+  transition: ease-in-out 0.3s;
+}

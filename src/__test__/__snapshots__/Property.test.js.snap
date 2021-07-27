@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the property component 1`] = `
+<section
+  className="propertyContainer"
+>
+  <h1>
+    About 
+    Test Property
+  </h1>
+  <div
+    className="propertyCard"
+    data-testid="property"
+  >
+    <img
+      alt="Test Property"
+      src="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
+    />
+    <div
+      className="propertyCard__info"
+    >
+      <p
+        data-testid="property-name"
+      >
+        <span>
+          Name: 
+        </span>
+        Test Property
+      </p>
+      <p
+        data-testid="property-address"
+      >
+        <span>
+          Address: 
+        </span>
+        Test Address
+      </p>
+      <p
+        data-testid="property-price"
+      >
+        <span>
+          Price: 
+        </span>
+        $
+        500
+      </p>
+      <p
+        data-testid="property-description"
+      >
+        <span>
+          Description: 
+        </span>
+        Lorem ipsum
+      </p>
+      <p
+        data-testid="property-rentable"
+      >
+        <span>
+          Availability: 
+        </span>
+        Available
+      </p>
+    </div>
+  </div>
+</section>
+`;

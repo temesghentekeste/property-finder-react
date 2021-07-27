@@ -1,0 +1,37 @@
+.favorites {
+  margin: 1rem;
+  margin-top: 7rem;
+}
+
+.favorites__container {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.favorites__heading {
+  text-align: center;
+}
+
+.scrollHorizontally {
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+.favorites h1 {
+  text-align: center;
+  color: rgb(99, 95, 95);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .favorites__container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .scrollHorizontally {
+    display: none;
+  }
+}

@@ -1,0 +1,46 @@
+.loginSignupContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: url('../assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  margin-top: -30rem;
+}
+
+.success,
+.error {
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  background: rgb(23, 100, 4);
+  color: white;
+  font-size: 1rem;
+  text-align: left;
+  opacity: 0.5;
+}
+
+.error {
+  background: rgb(235, 14, 6);
+}
+
+.backToHome a {
+  margin-top: 1rem;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  color: #ec5323;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .success,
+  .error {
+    width: 30%;
+  }
+}

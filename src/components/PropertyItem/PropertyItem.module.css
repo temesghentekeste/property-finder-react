@@ -1,0 +1,82 @@
+.propertyCard {
+  background: #fff;
+  padding: 1rem;
+  margin: 0.5rem;
+  color: rgb(70, 67, 67);
+  font-weight: 400;
+  flex: 0 0 75%;
+}
+
+.propertyCard__body {
+  margin: 0.8rem 0.4rem;
+}
+
+.propertyCard__body__bottom {
+  font-size: 0.8rem;
+}
+
+.propertyCard__footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.available,
+.notAvailable {
+  background: #3c79db;
+  padding: 0.3rem;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+}
+
+.notAvailable {
+  background: #6566ac;
+}
+
+.favoriteHeart,
+.normalHeart {
+  color: #ec5323;
+  cursor: pointer;
+}
+
+.normalHeart {
+  color: #444;
+}
+
+.propertyCard__footer__price p {
+  margin: 0;
+}
+
+.propertyCard__body__top p:first-child {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.propertyCard__body__top div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.propertyCard__footer a {
+  margin-top: 1rem;
+  display: block;
+  background: #ec5323;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.propertyCard img {
+  width: 100%;
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .propertyCard {
+    margin: 0.5rem;
+    flex: 0 0 30%;
+  }
+}
