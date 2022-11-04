@@ -38,7 +38,7 @@ The site allows users to create an account, view available properties, add a pro
 - [ ] StyleLint
 - [ ] Heroku
 - [ ] npm
-- [ ] CSS
+- [ ] CSS 3
 - [ ] ES6
 
 ## :heavy_check_mark: Getting Started <a name = "start"></a>
